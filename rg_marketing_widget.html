@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Role Garden — See how well you match any opportunity</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brand:  #1B6B3A;
+      --brand2: #155730;
+      --ink:    #122019;
+      --ink2:   #3a4d3f;
+      --ink3:   #6b7a6e;
+      --bd:     #d4e0d7;
+      --bg:     #f5f7f5;
+      --s1:     #eaf3ed;
+    }
+
+    body {
+      font-family: 'Lexend', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+
+    /* ── Widget card ── */
+    .widget-card {
+      width: 100%;
+      max-width: 500px;
+      background: #fff;
+      border: 1px solid var(--bd);
+      border-radius: 16px;
+      box-shadow: 0 12px 48px rgba(0,0,0,.07);
+      padding: 36px 32px;
+    }
+
+    /* ── Textarea ── */
+    .widget-jd {
+      width: 100%;
+      min-height: 150px;
+      padding: 12px 14px;
+      border: 1.5px solid var(--bd);
+      border-radius: 10px;
+      font-size: 13px;
+      font-family: 'Lexend', sans-serif;
+      color: var(--ink);
+      resize: vertical;
+      line-height: 1.6;
+      background: #fff;
+      transition: border-color .15s;
+      margin-bottom: 10px;
+    }
+    .widget-jd:focus { outline: none; border-color: var(--brand); }
+
+    /* ── Email input ── */
+    .widget-email {
+      width: 100%;
+      padding: 11px 13px;
+      border: 1.5px solid var(--bd);
+      border-radius: 8px;
+      font-size: 13px;
+      font-family: 'Lexend', sans-serif;
+      color: var(--ink);
+      background: #fff;
+      transition: border-color .15s;
+    }
+    .widget-email:focus { outline: none; border-color: var(--brand); }
+
+    /* ── CTA button ── */
+    .widget-cta {
+      width: 100%;
+      padding: 13px;
+      background: var(--brand);
+      color: #fff;
+      border: none;
+      border-radius: 9px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Lexend', sans-serif;
+      letter-spacing: -0.01em;
+      transition: opacity .15s, background .15s;
+      margin-top: 12px;
+    }
+    .widget-cta:hover { background: var(--brand2); }
+    .widget-cta:disabled { opacity: .45; cursor: not-allowed; }
+
+    /* ── Error / hint text ── */
+    .widget-hint {
+      font-size: 11.5px;
+      color: var(--ink3);
+      margin: 5px 0 0;
+      line-height: 1.5;
+    }
+    .widget-error {
+      font-size: 12px;
+      color: #c0392b;
+      margin: 6px 0 0;
+      display: none;
+    }
+
+    /* ── Sign-in link ── */
+    .widget-signin {
+      margin-top: 18px;
+      font-size: 12px;
+      color: var(--ink3);
+      text-align: center;
+    }
+    .widget-signin a {
+      color: var(--brand);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .widget-signin a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <!--
+    ══════════════════════════════════════════════════════════════════════
+    RG MARKETING WIDGET
+    ══════════════════════════════════════════════════════════════════════
+
+    DROP ZONE — replace this wrapper with your marketing page's layout.
+    The widget card (.widget-card) is the self-contained unit.
+
+    What this does:
+      1. User pastes a JD + enters email
+      2. Click "Match Against My Profile →"
+      3. JD stored in localStorage as rg_pending_jd
+      4. Email stored as rg_captured_email
+      5. Touch 1A pre-signup Klaviyo email fires (via Render proxy)
+      6. User redirected to app.rolegarden.com/index.html (signup flow)
+      7. After signup + onboarding, rgCheckAndRunPendingJD() in index.html
+         reads rg_pending_jd, injects into assess panel, auto-runs assessment
+
+    Integration notes:
+      - APP_URL below points to the app subdomain. Update if it changes.
+      - rgTriggerPresignupEmail calls the Render proxy — no direct Resend.
+      - rgGetCohort() / rgGetAttribution() read localStorage / URL params.
+        Stub them out here or inline lightweight versions as needed.
+  ══════════════════════════════════════════════════════════════════════
+  -->
+
+  <!-- Layout wrapper — swap this out for your marketing page shell -->
+  <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px 20px">
+
+    <div class="widget-card">
+
+      <!-- Brand mark -->
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:28px">
+        <div style="width:36px;height:36px;background:var(--brand);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 2C8 2 4 5 4 9a4 4 0 0 0 8 0c0-4-4-7-4-7z"/>
+            <line x1="8" y1="9" x2="8" y2="14"/>
+          </svg>
+        </div>
+        <div>
+          <div style="font-size:18px;font-weight:800;color:var(--ink)">Role Garden</div>
+          <div style="font-size:11px;color:var(--ink3);font-style:italic">Your career, cultivated.</div>
+        </div>
+      </div>
+
+      <h1 style="font-size:26px;font-weight:800;color:var(--ink);line-height:1.25;margin:0 0 10px;letter-spacing:-0.02em">
+        See how well you match<br>any opportunity.
+      </h1>
+      <p style="font-size:14px;color:var(--ink2);line-height:1.65;margin:0 0 24px">
+        Paste a job description below — Role Garden evaluates the opportunity against your actual experience. No guesswork, no keyword fluff.
+      </p>
+
+      <!-- JD textarea -->
+      <textarea
+        id="widgetTextarea"
+        class="widget-jd"
+        placeholder="Paste job description, recruiter message, or URL here…"
+        oninput="onWidgetJdInput()"
+      ></textarea>
+
+      <!-- Email row -->
+      <div style="margin-top:2px">
+        <input
+          type="email"
+          id="widgetEmailInput"
+          class="widget-email"
+          placeholder="Your email address"
+          autocomplete="email"
+          oninput="this.style.borderColor=this.value.trim()?'var(--brand)':'var(--bd)'"
+        />
+        <p class="widget-hint">So we can save your progress and send you matching opportunities.</p>
+        <p class="widget-error" id="widgetError">Please paste a job description to continue.</p>
+      </div>
+
+      <!-- CTA -->
+      <button class="widget-cta" id="widgetCTA" onclick="handleWidgetCTAClick()">
+        Match Against My Profile →
+      </button>
+
+      <!-- Sign-in link -->
+      <div class="widget-signin">
+        Already have an account? <a href="https://app.rolegarden.com">Sign in</a>
+      </div>
+
+    </div><!-- /.widget-card -->
+
+  </div><!-- /layout wrapper -->
+
+
+  <script>
+    // ── Config ────────────────────────────────────────────────────────────
+    const APP_URL = 'https://app.rolegarden.com';
+    const PROXY_URL = 'https://rg-proxy-flpd.onrender.com';
+
+    // ── JD input handler ─────────────────────────────────────────────────
+    function onWidgetJdInput() {
+      const ta = document.getElementById('widgetTextarea');
+      ta.style.borderColor = ta.value.trim() ? 'var(--brand)' : 'var(--bd)';
+      document.getElementById('widgetError').style.display = 'none';
+    }
+
+    // ── Main CTA handler ─────────────────────────────────────────────────
+    // Stores JD + email in localStorage, fires Touch 1A, redirects to app.
+    function handleWidgetCTAClick() {
+      const jd    = document.getElementById('widgetTextarea')?.value?.trim();
+      const email = document.getElementById('widgetEmailInput')?.value?.trim();
+
+      // JD required
+      if (!jd) {
+        document.getElementById('widgetError').style.display = 'block';
+        document.getElementById('widgetTextarea').focus();
+        return;
+      }
+
+      // Store JD — rgCheckAndRunPendingJD() in index.html picks this up
+      // after signup + onboarding complete
+      try { localStorage.setItem('rg_pending_jd', jd); } catch(e) {}
+
+      // Capture email if valid — fire Touch 1A pre-signup sequence
+      if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        try {
+          localStorage.setItem('rg_captured_email', email);
+          localStorage.setItem('rg_email_capture_context', 'homepage_widget');
+        } catch(e) {}
+        rgTriggerPresignupEmail(email, 'homepage_widget', false); // fire-and-forget
+      }
+
+      // Disable button to prevent double-click
+      const btn = document.getElementById('widgetCTA');
+      if (btn) { btn.disabled = true; btn.textContent = 'Redirecting…'; }
+
+      // Redirect to app signup — pass email as query param so auth form pre-fills
+      const dest = new URL(APP_URL);
+      dest.searchParams.set('mode', 'signup');
+      if (email) dest.searchParams.set('email', email);
+      window.location.href = dest.toString();
+    }
+
+    // ── Pre-signup email trigger ──────────────────────────────────────────
+    // Calls Render proxy — never Resend directly from client.
+    async function rgTriggerPresignupEmail(email, context, hasResume = false) {
+      try {
+        await fetch(`${PROXY_URL}/api/klaviyo/presignup`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email,
+            context,
+            hasResume,
+            cohort:      rgGetCohort(),
+            attribution: rgGetAttribution(),
+          }),
+        });
+      } catch(e) {
+        console.warn('[RG email trigger]', e.message);
+      }
+    }
+
+    // ── Cohort + attribution helpers ─────────────────────────────────────
+    // Lightweight stubs — swap for the full versions from index.html if needed.
+    function rgGetCohort() {
+      try {
+        return JSON.parse(localStorage.getItem('rg_cohort') || '{}');
+      } catch(e) { return {}; }
+    }
+
+    function rgGetAttribution() {
+      const p = new URLSearchParams(window.location.search);
+      return {
+        utm_source:   p.get('utm_source')   || localStorage.getItem('rg_utm_source')   || '',
+        utm_campaign: p.get('utm_campaign') || localStorage.getItem('rg_utm_campaign') || '',
+        traffic_source: p.get('utm_source') ? 'paid' : 'organic',
+      };
+    }
+
+    // ── Persist UTM params on page load ──────────────────────────────────
+    (function persistUTM() {
+      const p = new URLSearchParams(window.location.search);
+      if (p.get('utm_source'))   try { localStorage.setItem('rg_utm_source',   p.get('utm_source'));   } catch(e) {}
+      if (p.get('utm_campaign')) try { localStorage.setItem('rg_utm_campaign', p.get('utm_campaign')); } catch(e) {}
+    })();
+  </script>
+
+</body>
+</html>
