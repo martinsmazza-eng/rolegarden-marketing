@@ -1,305 +1,584 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="robots" content="noindex, nofollow" />
-<!-- REMOVE noindex BEFORE PAID MEDIA LAUNCH [FOLLOW-UP] -->
-<link rel="canonical" href="https://rolegarden.com" />
-
-<!-- Open Graph -->
-<meta property="og:title" content="Role Garden — AI Career Growth Platform" />
-<meta property="og:description" content="Find better-fit roles at exceptional companies. AI-powered job matching, scoring, and interview prep." />
-<meta property="og:image" content="https://rolegarden.com/rolegarden_logo_square_512.png" />
-<meta property="og:url" content="https://rolegarden.com" />
-<meta property="og:type" content="website" />
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Role Garden — AI Career Growth Platform" />
-<meta name="twitter:description" content="Find better-fit roles at exceptional companies." />
-<meta name="twitter:image" content="https://rolegarden.com/rolegarden_logo_square_512.png" />
-<link rel="icon" type="image/png" sizes="512x512" href="rolegarden_logo_square_512.png" />
-<link rel="apple-touch-icon" sizes="512x512" href="rolegarden_profile_picture_512.png" />
-<title>Role Garden — AI Career Growth Platform</title>
-<meta name="description" content="Role Garden is an AI career growth platform that helps professionals find better-fit roles, score jobs found anywhere, and prepare for every interview stage." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Role Garden — Less applying. More interviewing.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --green-950:#063f2b;
-  --green-900:#0b4a31;
-  --green-800:#15502b;
-  --green-700:#1b6b3a;
-  --green-100:#e8f2ec;
-  --green-50:#f2f8f4;
-  --ivory:#f8f4ec;
-  --ivory-2:#fbf8f1;
-  --card:#ffffff;
-  --ink:#18211b;
-  --muted:#536457;
-  --soft:#879289;
-  --line:#e3ddd1;
-  --amber:#f2a93b;
-  --amber-soft:#fff4dd;
-  --shadow:0 24px 70px rgba(29, 63, 43, .12);
-  --shadow-soft:0 14px 36px rgba(29, 63, 43, .08);
-  --radius:26px;
+  --green:#1B6B3A; --green-dark:#0E3D2C; --green-mid:#155730;
+  --green-tint:#EAF4EC; --green-border:#C4DFC9;
+  --cream:#F5F1EA; --cream-dark:#EDE9E0;
+  --white:#FFFFFF; --border:#E8E4D8;
+  --ink:#1A2E22; --ink-mid:#5C6B62; --ink-muted:#7A887E;
+  --amber:#D8923A; --amber-tint:#F5E8D5;
+  --shadow-sm:0 2px 8px rgba(15,42,28,0.05),0 1px 2px rgba(15,42,28,0.04);
+  --shadow-md:0 8px 28px rgba(15,42,28,0.08),0 2px 6px rgba(15,42,28,0.04);
+  --shadow-lg:0 24px 64px rgba(15,42,28,0.10),0 4px 16px rgba(15,42,28,0.06);
+  --r-sm:10px; --r-md:16px; --r-lg:20px; --r-pill:999px;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--ivory);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
-a{text-decoration:none;color:inherit}
-.container{width:min(1180px,calc(100% - 44px));margin:0 auto}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;padding:14px 22px;font-weight:800;font-size:15px;border:1px solid transparent;transition:.18s ease;cursor:pointer}
-.btn-primary{background:var(--green-800);color:white;box-shadow:0 18px 35px rgba(21,80,43,.20)}
-.btn-primary:hover{transform:translateY(-1px);background:var(--green-950)}
-.btn-secondary{background:white;border-color:var(--line);color:var(--green-950)}
-.btn-secondary:hover{transform:translateY(-1px);border-color:#bdd1c3}
-.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--green-700);font-weight:800}
-header{position:sticky;top:0;z-index:20;background:rgba(248,244,236,.86);backdrop-filter:blur(16px);border-bottom:1px solid rgba(21,80,43,.13)}
-.nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:22px}
-.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:-.04em;font-size:20px}
-.brand img{width:42px;height:42px;border-radius:12px;box-shadow:0 12px 24px rgba(21,80,43,.15)}
-.navlinks{display:flex;align-items:center;gap:28px;color:var(--muted);font-size:14px;font-weight:800}
-.navcta{display:flex;align-items:center;gap:12px}
-.navcta .btn{padding:11px 18px;font-size:14px}
-.nav-signin{background:rgba(255,255,255,.78);border:1px solid rgba(21,80,43,.22);color:var(--green-950);box-shadow:0 8px 20px rgba(21,80,43,.06)}
-.nav-signin:hover{background:white;border-color:rgba(21,80,43,.38);transform:translateY(-1px)}
-.nav-start{background:var(--green-950);color:white;border-color:var(--green-950);box-shadow:0 14px 28px rgba(6,63,43,.22)}
-.nav-start:hover{background:var(--green-800);border-color:var(--green-800);transform:translateY(-1px)}
-.hero{position:relative;overflow:hidden;padding:92px 0 82px;background:
-  radial-gradient(circle at 86% 18%,rgba(242,169,59,.22),transparent 26%),
-  radial-gradient(circle at 77% 72%,rgba(21,80,43,.13),transparent 32%),
-  linear-gradient(120deg,#fffdf7 0%,#f8f4ec 50%,#edf5ef 100%);border-bottom:1px solid rgba(21,80,43,.13)}
-.hero-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:58px;align-items:center}
-.hero h1{font-size:66px;line-height:.98;letter-spacing:-.07em;margin:18px 0 22px;font-weight:900;color:#122019}
-.hero h1 span{color:var(--green-700)}
-.hero p{font-size:20px;color:var(--muted);max-width:620px}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin:32px 0 16px}
-.note{color:var(--soft);font-size:14px;font-weight:700}
-.trust{display:flex;gap:16px;flex-wrap:wrap;margin-top:26px;color:var(--muted);font-size:14px;font-weight:800}
-.trust span{display:inline-flex;align-items:center;gap:8px}
-.check{width:19px;height:19px;border-radius:50%;background:var(--green-100);color:var(--green-700);display:grid;place-items:center;font-size:12px;font-weight:900}
-.product-shell{background:white;border:1px solid rgba(21,80,43,.16);border-radius:32px;box-shadow:var(--shadow);overflow:hidden}
-.product-top{height:54px;background:var(--green-950);display:flex;align-items:center;justify-content:space-between;padding:0 18px;color:white}
-.product-brand{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:900}
-.product-brand img{width:28px;height:28px;border-radius:8px}
-.product-tabs{display:flex;gap:20px;font-size:12px;font-weight:800;opacity:.95}
-.product-tabs span:first-child{border-bottom:2px solid #9be46c;padding-bottom:6px}
-.mock{display:grid;grid-template-columns:170px 1fr 200px;min-height:510px;background:var(--ivory-2)}
-.mock-left{background:linear-gradient(180deg,var(--green-950),#06422e);color:white;padding:20px 14px}
-.saved-title{font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin-bottom:14px;font-weight:900}
-.saved-item{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:12px;margin-bottom:10px}
-.saved-item.active{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.32)}
-.saved-item strong{display:block;font-size:13px;line-height:1.25}
-.saved-item small{font-size:11px;opacity:.78}
-.new-search{margin-top:14px;border:1px dashed rgba(255,255,255,.35);border-radius:14px;padding:10px;font-size:12px;font-weight:800;text-align:center;opacity:.9}
-.mock-center{padding:22px 18px}
-.control-row{display:flex;gap:10px;margin-bottom:16px}
-.control{background:white;border:1px solid var(--line);border-radius:13px;padding:10px 12px;font-size:11px;font-weight:800;color:var(--muted)}
-.mock-center h3{font-size:18px;margin-bottom:12px;letter-spacing:-.03em}
-.job-card{background:white;border:1px solid var(--line);border-radius:20px;padding:16px;box-shadow:0 12px 30px rgba(17,24,39,.04)}
-.job-head{display:grid;grid-template-columns:50px 1fr 132px;gap:14px;align-items:center;border-bottom:1px solid var(--line);padding-bottom:13px;margin-bottom:13px}
-.logo-square{width:50px;height:50px;border-radius:13px;background:#d5152b;color:white;display:grid;place-items:center;font-size:28px;font-weight:900}
-.job-title{font-weight:900;font-size:16px;line-height:1.15}
-.job-company{font-size:12px;color:var(--muted);font-weight:800;margin-top:3px}
-.match-label{font-size:12px;font-weight:900;color:var(--green-700);text-align:right;text-transform:uppercase}
-.match-bar{height:8px;background:#e1e3df;border-radius:999px;margin-top:8px;overflow:hidden}
-.match-bar span{display:block;height:100%;width:82%;background:var(--green-700);border-radius:999px}
-.card-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.card-block h4{font-size:10px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;color:var(--green-950)}
-.card-block.challenge h4{color:#c26500}
-.card-block p{font-size:12px;color:var(--muted);margin-bottom:6px;font-weight:650}
-.fit-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
-.fit-box{background:#f5f6f1;border-radius:14px;padding:12px;font-size:11px;color:var(--muted);font-weight:650}
-.fit-box strong{display:block;color:var(--green-950);font-size:10px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
-.mock-right{padding:20px 14px;border-left:1px solid var(--line)}
-score{display:block}
-.score-box{background:white;border:1px solid var(--line);border-radius:20px;padding:16px;margin-bottom:16px}
-.score-box h4,.profile-box h4{font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--green-950);margin-bottom:14px}
-.drop{height:136px;border:1px dashed #bac7be;border-radius:16px;display:grid;place-items:center;text-align:center;font-size:12px;color:var(--muted);font-weight:800;margin-bottom:12px}
-.score-btn{background:var(--green-950);color:white;border-radius:12px;padding:11px;text-align:center;font-size:12px;font-weight:900}
-.profile-box{background:white;border:1px solid var(--line);border-radius:20px;padding:16px}
-.profile-line{font-size:11px;color:var(--muted);margin-bottom:9px}
-.profile-line strong{display:block;color:var(--green-950);font-size:12px}
-.section{padding:92px 0}
-.section-head{max-width:760px;margin:0 auto 46px;text-align:center}
-.section-head h2{font-size:46px;line-height:1.05;letter-spacing:-.055em;margin:12px 0 12px}
-.section-head p{font-size:18px;color:var(--muted)}
-.pill-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:24px}
-.pill{background:white;border:1px solid var(--line);border-radius:999px;padding:10px 14px;font-weight:800;color:var(--muted);font-size:13px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:white;border:1px solid var(--line);border-radius:26px;padding:28px;box-shadow:var(--shadow-soft)}
-.icon{width:48px;height:48px;border-radius:16px;background:var(--green-100);display:grid;place-items:center;color:var(--green-700);font-weight:900;margin-bottom:20px}
-.icon.amber{background:var(--amber-soft);color:#a95f00}
-.card h3{font-size:22px;letter-spacing:-.025em;margin-bottom:10px}
-.card p{color:var(--muted);font-size:15px}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-.copy h2{font-size:44px;line-height:1.08;letter-spacing:-.055em;margin:12px 0}
-.copy p{font-size:18px;color:var(--muted);margin-bottom:22px}
-.bullets{display:grid;gap:12px}
-.bullets div{display:flex;gap:10px;align-items:flex-start;color:var(--muted);font-weight:750}
-.feature-visual{background:white;border:1px solid var(--line);border-radius:30px;padding:26px;box-shadow:var(--shadow-soft)}
-.search-list{display:grid;gap:12px}
-.search-row{display:flex;align-items:center;justify-content:space-between;border:1px solid var(--line);background:#fbfaf6;border-radius:18px;padding:16px}
-.search-row strong{display:block}
-.search-row span{font-size:13px;color:var(--muted)}
-.new-pill{background:var(--green-100);color:var(--green-700);border-radius:999px;padding:6px 10px;font-weight:900;font-size:12px}
-.score-demo{background:#fff;border:1px solid var(--line);border-radius:28px;padding:30px;box-shadow:var(--shadow-soft)}
-.paste-demo{height:110px;border:1px dashed #b9c5bd;border-radius:18px;display:grid;place-items:center;color:var(--muted);font-weight:800;margin:22px 0;background:#fbfaf6}
-.result-demo{background:#f6faf7;border:1px solid #d7e7dc;border-radius:18px;padding:20px;display:grid;grid-template-columns:1fr 150px;gap:20px;align-items:center}
-.result-demo h3{font-size:24px;margin-bottom:6px;color:var(--green-950)}
-.workspace{background:white}
-.workspace-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-.workspace-card{border:1px solid var(--line);border-radius:20px;padding:20px;background:var(--ivory-2);min-height:132px}
-.workspace-card strong{display:block;margin:12px 0 6px}
-.workspace-card p{font-size:13px;color:var(--muted)}
-.pricing{background:linear-gradient(180deg,#fff 0%,var(--ivory) 100%)}
-.price-card{max-width:500px;margin:0 auto;background:white;border:2px solid var(--green-700);border-radius:32px;padding:34px;box-shadow:var(--shadow)}
-.price-card h3{font-size:26px;margin-bottom:6px}
-.price{font-size:62px;font-weight:900;letter-spacing:-.06em;margin:12px 0 0}
-.price span{font-size:18px;color:var(--muted);letter-spacing:0}
-.features{list-style:none;margin:26px 0;display:grid;gap:12px}
-.features li{display:flex;gap:10px;color:var(--muted);font-weight:750}
-.faq{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:960px;margin:0 auto}
-.faq-item{background:white;border:1px solid var(--line);border-radius:20px;padding:22px}
-.faq-item h3{font-size:17px;margin-bottom:8px}
-.faq-item p{color:var(--muted);font-size:15px}
-.final{background:var(--green-950);color:white;text-align:center;padding:86px 0}
-.final h2{font-size:48px;line-height:1.05;letter-spacing:-.055em;margin-bottom:16px}
-.final p{font-size:18px;opacity:.84;margin-bottom:28px}
-.final .btn{background:white;color:var(--green-950)}
-footer{background:#111a15;color:white;padding:34px 0}
-.footer{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap;color:rgba(255,255,255,.72);font-size:14px}
-.footer-links{display:flex;gap:22px}
-@media (max-width:1050px){.hero-grid,.split{grid-template-columns:1fr}.mock{grid-template-columns:1fr}.mock-left{display:none}.mock-right{border-left:0;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:14px}.cards,.workspace-grid{grid-template-columns:1fr 1fr}}
-@media (max-width:760px){.container{width:min(100% - 28px,1180px)}.navlinks,.navcta .btn-secondary{display:none}.navcta .btn-primary{padding:9px 16px;font-size:13px}.hero{padding:64px 0}.hero-grid{grid-template-columns:1fr}.product-shell{display:none}.hero h1{font-size:44px}.hero p{font-size:17px}.section{padding:68px 0}.section-head h2,.copy h2,.final h2{font-size:34px}.cards,.workspace-grid,.faq,.mock-right,.result-demo{grid-template-columns:1fr}.card-grid,.fit-row{grid-template-columns:1fr}.hero-actions .btn{width:100%}}
+body { font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; background:var(--white); color:var(--ink); -webkit-font-smoothing:antialiased; }
 
-.solid-icon svg{width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.solid-icon.small svg{width:24px;height:24px}
+/* NAV */
+.nav { position:sticky; top:0; z-index:100; background:rgba(255,255,255,0.95); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); }
+.nav-inner { max-width:1200px; margin:0 auto; padding:0 40px; height:64px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+.nav-logo { display:flex; align-items:center; gap:10px; text-decoration:none; flex-shrink:0; }
+.nav-logo-img { width:30px; height:30px; border-radius:7px; object-fit:cover; }
+.nav-logo-name { font-size:13px; font-weight:800; letter-spacing:.08em; color:var(--ink); text-transform:uppercase; }
+.nav-center { display:flex; align-items:center; gap:2px; flex:1; justify-content:center; }
+.nav-link { font-size:14px; font-weight:500; color:var(--ink-mid); padding:7px 14px; border-radius:var(--r-sm); text-decoration:none; transition:color .15s, background .15s; white-space:nowrap; }
+.nav-link:hover { color:var(--ink); background:var(--cream); }
+.nav-right { display:flex; align-items:center; gap:10px; flex-shrink:0; }
+.nav-signin { font-size:14px; font-weight:600; color:var(--ink-mid); padding:7px 14px; border-radius:var(--r-sm); text-decoration:none; transition:color .15s; }
+.nav-signin:hover { color:var(--ink); }
+.nav-cta { background:var(--green); color:white; border:none; border-radius:var(--r-sm); padding:9px 20px; font-size:14px; font-weight:700; cursor:pointer; font-family:inherit; text-decoration:none; transition:background .15s, transform .1s; white-space:nowrap; }
+.nav-cta:hover { background:var(--green-mid); transform:translateY(-1px); }
 
+/* HERO */
+.hero { background:var(--cream); padding:100px 40px 80px; text-align:center; }
+.hero-inner { max-width:800px; margin:0 auto; }
+.hero-headline { font-size:64px; font-weight:800; color:var(--ink); letter-spacing:-0.04em; line-height:1.05; margin-bottom:20px; }
+.hero-headline em { font-style:italic; color:var(--green); }
+.hero-sub { font-size:19px; color:var(--ink-mid); line-height:1.65; max-width:600px; margin:0 auto 36px; }
+.hero-ctas { display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom:60px; }
+.btn-primary { background:var(--green); color:white; border:none; border-radius:var(--r-sm); padding:14px 28px; font-size:15px; font-weight:700; cursor:pointer; font-family:inherit; text-decoration:none; transition:background .15s, transform .1s; display:inline-flex; align-items:center; gap:8px; }
+.btn-primary:hover { background:var(--green-mid); transform:translateY(-1px); }
+.btn-secondary { background:var(--white); color:var(--ink); border:1.5px solid var(--border); border-radius:var(--r-sm); padding:13px 24px; font-size:15px; font-weight:600; cursor:pointer; font-family:inherit; text-decoration:none; transition:background .15s, border-color .15s, box-shadow .15s; box-shadow:var(--shadow-sm); }
+.btn-secondary:hover { background:var(--cream); border-color:var(--ink-muted); box-shadow:var(--shadow-md); }
 
+/* JOURNEY */
+.journey { display:flex; align-items:center; justify-content:center; gap:0; }
+.journey-step { display:flex; flex-direction:column; align-items:center; gap:10px; }
+.journey-icon { width:52px; height:52px; background:var(--white); border:1px solid var(--border); border-radius:var(--r-md); display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-sm); }
+.journey-label { font-size:11px; font-weight:600; color:var(--ink-mid); }
+.journey-arrow { width:32px; height:1px; background:var(--border); margin:0 4px; margin-bottom:22px; position:relative; }
+.journey-arrow::after { content:'›'; position:absolute; right:-6px; top:-9px; color:var(--ink-muted); font-size:14px; }
 
-/* === Premium polish pass === */
-:root{
-  --ivory:#f7f2e8;
-  --ivory-2:#fffaf1;
-  --line:#e6ded0;
-  --shadow:0 30px 90px rgba(6,63,43,.14);
-  --shadow-soft:0 18px 48px rgba(6,63,43,.08);
-}
-body{
-  background:
-    radial-gradient(circle at 12% 8%, rgba(27,107,58,.06), transparent 28%),
-    radial-gradient(circle at 92% 16%, rgba(242,169,59,.09), transparent 26%),
-    var(--ivory);
-}
-.container{width:min(1220px,calc(100% - 56px));}
-header{
-  background:rgba(247,242,232,.82);
-  border-bottom:1px solid rgba(6,63,43,.12);
-  box-shadow:0 10px 30px rgba(6,63,43,.04);
-}
-.nav{height:82px;}
-.brand{font-size:21px;gap:13px;color:var(--green-950)}
-.brand img{width:40px;height:40px;border-radius:11px;box-shadow:0 12px 26px rgba(6,63,43,.16)}
-.navlinks{gap:32px;font-size:14px;color:#405347}
-.navlinks a{position:relative;padding:8px 0}
-.navlinks a:after{content:"";position:absolute;left:0;right:0;bottom:2px;height:2px;border-radius:999px;background:var(--green-700);transform:scaleX(0);transform-origin:center;transition:.18s ease;opacity:.65}
-.navlinks a:hover:after{transform:scaleX(1)}
-.navcta .btn{padding:11px 19px;font-size:14px}
-.nav-signin{background:transparent;border-color:rgba(6,63,43,.22);color:var(--green-950);box-shadow:none}
-.nav-start{background:var(--green-950);border-color:var(--green-950);box-shadow:0 16px 34px rgba(6,63,43,.24)}
-.btn{letter-spacing:-.01em}
-.btn-primary{background:linear-gradient(180deg,var(--green-800),var(--green-950));box-shadow:0 18px 38px rgba(6,63,43,.22)}
-.btn-secondary{background:rgba(255,255,255,.72);border-color:rgba(6,63,43,.18);color:var(--green-950)}
-.hero{
-  padding:104px 0 100px;
-  background:
-    radial-gradient(circle at 84% 8%, rgba(242,169,59,.18), transparent 24%),
-    radial-gradient(circle at 80% 76%, rgba(21,80,43,.16), transparent 36%),
-    radial-gradient(circle at 8% 18%, rgba(255,255,255,.9), transparent 34%),
-    linear-gradient(125deg,#fffdf7 0%,#f7f2e8 46%,#edf4ed 100%);
-}
-.hero-grid{grid-template-columns:.76fr 1.24fr;gap:78px;align-items:center}
-.hero h1{font-size:56px;line-height:1.02;letter-spacing:-.064em;margin:20px 0 24px;max-width:610px}
-.hero p{font-size:19px;line-height:1.65;max-width:570px;color:#4d5f52}
-.hero-actions{margin:36px 0 18px;gap:16px}
-.trust{gap:18px 20px;margin-top:30px;font-size:13px;color:#536457}
-.product-shell{transform:translateY(4px) scale(1.035);transform-origin:center;box-shadow:0 34px 100px rgba(6,63,43,.16);border-color:rgba(6,63,43,.16)}
-.product-top{height:56px;background:linear-gradient(180deg,#073d2b,#042c21)}
-.mock{min-height:535px;background:linear-gradient(180deg,#fffaf1,#f8f4ec)}
-.mock-left{background:linear-gradient(180deg,#073d2b,#052e24)}
-.score-box,.profile-box,.job-card,.feature-visual,.score-demo,.workspace-card,.faq-item,.card{box-shadow:0 18px 44px rgba(6,63,43,.055)}
-.section{padding:112px 0}
-.section-head{margin-bottom:58px}
-.section-head h2{font-size:44px;letter-spacing:-.05em;max-width:780px;margin-left:auto;margin-right:auto}
-.section-head p{line-height:1.75}
-.cards{gap:26px}.card{padding:32px;border-radius:28px}.card p{line-height:1.72}
-.icon{background:rgba(27,107,58,.10);color:var(--green-800)}
-.icon svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.split{gap:72px}.copy p{line-height:1.75}.copy h2{font-size:42px}
-.feature-visual,.score-demo{border-radius:32px;padding:32px}
-.search-row{padding:18px 20px;border-radius:20px;background:#fffdf8}
-.score-demo h2{font-size:32px!important}
-.paste-demo{height:128px;background:linear-gradient(180deg,#fffdf8,#f8f4ec)}
-.result-demo{background:linear-gradient(180deg,#f8fcf8,#f2f8f4);border-color:#d5e4d9}
-.workspace{background:linear-gradient(180deg,#fffdf9 0%,#fff 100%)}
-.workspace-grid{gap:18px}.workspace-card{padding:24px;border-radius:22px;min-height:150px}.workspace-card p{line-height:1.65}
-.faq{gap:18px}.faq-item{padding:26px}.faq-item p{line-height:1.7}
-.final{padding:100px 0;background:radial-gradient(circle at 78% 0%,rgba(242,169,59,.16),transparent 30%),linear-gradient(180deg,var(--green-900),var(--green-950))}
-.final h2{font-size:44px}.final p{line-height:1.7}
-@media (max-width:760px){.container{width:min(100% - 30px,1220px)}.hero-grid{gap:40px;grid-template-columns:1fr}.product-shell{display:none}.hero h1{font-size:42px}.section{padding:78px 0}.section-head h2,.copy h2,.final h2{font-size:32px}}
+/* SECTIONS */
+.section { padding:88px 40px; }
+.section-inner { max-width:1100px; margin:0 auto; }
+.section-white { background:var(--white); }
+.section-cream { background:var(--cream); }
+.section-eyebrow { font-size:10px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--green); margin-bottom:12px; display:flex; align-items:center; gap:8px; }
+.section-eyebrow::before { content:''; display:block; width:14px; height:2px; background:var(--green); border-radius:2px; }
+.section-title { font-size:44px; font-weight:800; color:var(--ink); letter-spacing:-0.03em; line-height:1.1; margin-bottom:16px; }
+.section-sub { font-size:17px; color:var(--ink-mid); line-height:1.7; max-width:560px; margin-bottom:36px; }
+.two-col { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
 
+/* WHY ROLE GARDEN */
+.compare-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:40px; }
+.compare-card { background:var(--cream); border:1px solid var(--border); border-radius:var(--r-lg); padding:28px; }
+.compare-card.rg { border-color:var(--green-border); background:var(--green-tint); }
+.compare-card-title { font-size:12px; font-weight:700; color:var(--ink-muted); letter-spacing:.06em; text-transform:uppercase; margin-bottom:18px; }
+.compare-card.rg .compare-card-title { color:var(--green); }
+.compare-item { display:flex; align-items:flex-start; gap:10px; margin-bottom:12px; font-size:14px; color:var(--ink-mid); line-height:1.55; }
+.compare-item:last-child { margin-bottom:0; }
+.compare-x { width:18px; height:18px; background:rgba(0,0,0,.06); border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
+.compare-check { width:18px; height:18px; background:var(--green); border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
+
+/* MATCH CARD PREVIEW */
+.assessed-card-preview { background:var(--white); border:1px solid var(--green-border); border-radius:var(--r-lg); overflow:hidden; box-shadow:0 4px 20px rgba(27,107,58,0.12); }
+.assessed-accent { height:3px; background:linear-gradient(90deg,var(--green),#4CAF7D); }
+.assessed-header-prev { padding:20px 22px 16px; display:flex; align-items:flex-start; justify-content:space-between; gap:16px; border-bottom:1px solid var(--border); }
+.ac-left { display:flex; align-items:center; gap:12px; }
+.ac-logo { width:40px; height:40px; background:#635BFF; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:800; color:white; flex-shrink:0; }
+.ac-badge { display:inline-flex; align-items:center; gap:5px; background:var(--green-tint); border:1px solid var(--green-border); border-radius:var(--r-pill); padding:3px 10px; font-size:10px; font-weight:700; color:var(--green); margin-bottom:5px; }
+.ac-role { font-size:17px; font-weight:800; color:var(--ink); letter-spacing:-0.02em; }
+.ac-co { font-size:13px; color:var(--ink-mid); font-weight:500; margin-top:2px; }
+.ac-match { display:flex; flex-direction:column; align-items:flex-end; gap:6px; flex-shrink:0; }
+.match-lbl { font-size:11px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--green); }
+.bar-track { width:110px; height:5px; background:var(--cream-dark); border-radius:var(--r-pill); overflow:hidden; }
+.bar-fill { height:100%; background:var(--green); border-radius:var(--r-pill); }
+.assessed-body-prev { padding:18px 22px; display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.col-lbl { font-size:9px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:8px; }
+.col-green { color:var(--green); } .col-amber { color:var(--amber); }
+.bullet-item { display:flex; align-items:flex-start; gap:7px; font-size:12px; color:var(--ink-mid); line-height:1.5; margin-bottom:6px; }
+.bullet-chk { width:14px; height:14px; background:var(--green-tint); border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
+.bullet-dot { width:6px; height:6px; background:var(--amber); border-radius:50%; flex-shrink:0; margin-top:5px; }
+
+/* WORKSPACE PREVIEW */
+.workspace-preview { background:var(--white); border:1px solid var(--border); border-radius:var(--r-lg); overflow:hidden; box-shadow:var(--shadow-lg); }
+.wp-header { background:var(--green-dark); padding:13px 18px; display:flex; align-items:center; gap:7px; }
+.wp-dot { width:8px; height:8px; border-radius:50%; }
+.wp-tabs { display:flex; gap:2px; padding:10px 14px; border-bottom:1px solid var(--border); }
+.wp-tab { font-size:12px; font-weight:600; padding:5px 12px; border-radius:var(--r-sm); color:var(--ink-muted); }
+.wp-tab.active { background:var(--green-tint); color:var(--green); }
+.wp-body { padding:14px; display:flex; flex-direction:column; gap:9px; }
+.wp-item { display:flex; align-items:center; gap:10px; padding:10px 12px; background:var(--cream); border-radius:var(--r-sm); }
+.wp-item-icon { width:28px; height:28px; background:var(--green-tint); border-radius:7px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.wp-item-label { font-size:13px; font-weight:600; color:var(--ink); }
+.wp-item-sub { font-size:11px; color:var(--ink-muted); margin-top:1px; }
+
+/* PREP PREVIEW */
+.prep-preview { background:var(--white); border:1px solid var(--border); border-radius:var(--r-lg); overflow:hidden; box-shadow:var(--shadow-md); }
+.prep-section { padding:15px 18px; border-bottom:1px solid var(--border); }
+.prep-section:last-child { border-bottom:none; }
+.prep-section-title { font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--green); margin-bottom:9px; }
+.prep-q { font-size:13px; font-weight:600; color:var(--ink); padding:8px 12px; background:var(--cream); border-radius:var(--r-sm); margin-bottom:5px; }
+.prep-q:last-child { margin-bottom:0; }
+
+/* WORTH PURSUING SECTION */
+.worth-card { background:var(--white); border:1px solid var(--border); border-radius:var(--r-lg); padding:40px; display:flex; align-items:center; justify-content:space-between; gap:48px; box-shadow:var(--shadow-sm); }
+.worth-left { flex:1; }
+.worth-preview { flex-shrink:0; width:300px; position:relative; }
+.worth-fade { position:absolute; bottom:0; left:0; right:0; height:80px; background:linear-gradient(transparent, var(--white)); border-radius:0 0 var(--r-lg) var(--r-lg); pointer-events:none; }
+
+/* ONE WORKSPACE */
+.workspace-chips { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:36px; }
+.ws-chip { background:var(--cream); border:1px solid var(--border); border-radius:var(--r-pill); padding:8px 18px; font-size:13px; color:var(--ink-mid); font-weight:500; }
+
+/* FINAL CTA SECTION */
+.final-section { background:var(--cream); padding:88px 40px; text-align:center; }
+.final-inner { max-width:600px; margin:0 auto; }
+.final-title { font-size:44px; font-weight:800; color:var(--ink); letter-spacing:-0.03em; margin-bottom:14px; line-height:1.1; }
+.final-sub { font-size:17px; color:var(--ink-mid); margin-bottom:36px; line-height:1.6; }
+.final-price { font-size:13px; color:var(--ink-muted); margin-top:14px; }
+
+/* FAQ */
+.faq-section { background:var(--white); padding:88px 40px; }
+.faq-inner { max-width:720px; margin:0 auto; }
+.faq-item { border-bottom:1px solid var(--border); }
+.faq-trigger { width:100%; display:flex; align-items:center; justify-content:space-between; padding:20px 0; cursor:pointer; background:none; border:none; font-family:inherit; text-align:left; gap:16px; }
+.faq-q { font-size:15px; font-weight:700; color:var(--ink); letter-spacing:-0.01em; }
+.faq-chevron { width:20px; height:20px; flex-shrink:0; transition:transform .2s; }
+.faq-body { font-size:14px; color:var(--ink-mid); line-height:1.7; padding-bottom:20px; display:none; }
+.faq-item.open .faq-body { display:block; }
+.faq-item.open .faq-chevron { transform:rotate(180deg); }
+
+/* FOOTER */
+.footer { background:var(--ink); padding:36px 40px; text-align:center; }
+.footer p { font-size:13px; color:rgba(255,255,255,.35); }
 </style>
 </head>
 <body>
-<header>
-  <div class="container nav">
-    <a class="brand" href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAIAAAB7GkOtAAAABmJLR0QA/wD/AP+gvaeTAAAb3ElEQVR4nO3dZ3hU9bqG8TWTSSWBhBACqRAgISEJJTSDdBEEqRsVsYCCCFJsWM9GxYaCUsTtcWMBVBRlY2EjBlEERaWX0EMLvUrvSWbOB7kOgoG0mXnXzHv/PmpInuuaZO5kyn9ZogdnGgAAfazSAwAAMggAAChFAABAKQIAAEoRAABQigAAgFIEAACUIgAAoBQBAAClCAAAKEUAAEApAgAAShEAAFCKAACAUgQAAJQiAACgFAEAAKUIAAAoRQAAQCkCAABKEQAAUIoAAIBSBAAAlCIAAKAUAQAApQgAAChFAABAKQIAAEoRAABQigAAgFIEAACUIgAAoBQBAAClCAAAKEUAAEApAgAAShEAAFCKAACAUgQAAJQiAACgFAEAAKUIAAAoRQAAQCkCAABKEQAAUIoAAIBSBAAAlCIAAKAUAQAApQgAAChFAABAKQIAAEoRAABQigAAgFIEAACUIgAAoBQBAAClCAAAKEUAAEApAgAAShEAAFCKAACAUgQAAJQiAACgFAEAAKUIAAAoRQAAQCkCAABKEQAAUIoAAIBSBAAAlCIAAKAUAQAApQgAAChFAABAKQIAAEoRAABQigAAgFIEAACUIgAAoBQBAAClCAAAKEUAAEApAgAAShEAAFCKAACAUgQAAJQiAACgFAEAAKUIAAAoRQAAQCkCAABKEQAAUIoAAIBSBAAAlCIAAKAUAQAApQgAAChFAABAKQIAAEoRAABQigAAgFIEAACUIgAAoBQBAAClCAAAKEUAAEApAgAAShEAAFCKAACAUgQAAJQiAACgFAEAAKUIAAAoRQAAQCkCAABKEQAAUIoAAIBSBAAAlCIAAKAUAQAApQgAAChFAABAKQIAAEoRAABQigAAgFIEAACUIgAAoBQBAAClCAAAKEUAAEApAgAAStmkBwDuZrP61KxSrVql6IohoYZhHD11PPfI3q0HcvPtBdLTALciANDCarG2Tb3htiYdWyY3KecfeNX/PXPh3MKNS2YsmfPjut/tDrvIQsDNLNGDM6U3AC7XOqXpiB5DE6tUK/Ijcw7kvvTlxJ82LHb9KECYT/nGsdIbABcK9At4/c4nR3QfEh4cWpyPDw8O7dGofVRY5C+bl+cX5Lt6HiCIAMCbVYuImT50fKvkJiX9h6mxie1Sm/28admJs6dcMQwwAwIAr9Uyucmng8fFVKxSun8eUb5iz8Yd1u/ZsvPIXucOA0yCAMA7DWjTa9w9/wz0CyjLJwnw9e/WsN3ZC+dW7FjnrGGAeRAAeBtfH98xdz09uN3dVoul7J/NarG0TG4SFRb504YlvDoIXoYAwKuEBpX/aNCYDnVbOPfTpsYmNqlZd97aRefzLjj3MwOCeCcwvEe1iJhZwyc1rVXfFZ/8hlr1Zw2fFF8p2hWfHBBBAOAlMqqnznp8UkJlF/5Fm1A5dtbwSQ2q1XHdlwDciYeA4A06pLeYPPD1kMByrv5CQX4B3Rq2y9m/Y9vBXa7+WoCrEQB4vHtu7Dbunn/62Xzd8+V8fWy31m9z+OTRtbs3u+crAi5CAODZHr3lvhE9hjrlBT/FZ7VY2qU1szsci7eudufXBZyLAMBTWSyW53oMHdr+XqkBmYkNKgaHLtiwxGE4pDYAZUEA4JFsVp+3+oy4q1lX2Rn14lPiI6LnrV1kd9AAeB4CAM/j7+v37/6vdKrfWnqIYRhGcnTNlJha361ZWGDnbWLwMAQAHibIL2DqoDGtU5pKD7msRmRcg+p1vlu9II/TQ+FReB8APEmQX8CUgWOaJWZID7la86RG04aMCwlw+etQASciAPAY5QODPx82MTOxgfSQwjVKSJ82eFxIYLD0EKC4CAA8Q4WgkOlDJ9SvliI95HoaVK8zfcj4CkEh0kOAYiEA8AChQeWnD52QHldbekjR6sYnfzZkAg2ARyAAMLsKQSGfDR2fFpskPaS40uOSPhsyoTyPBcH0CABMLSQw+LMhnnTv/6f0uKRPeU4YpkcAYF7l/AM/eehNj3jk5+/qxad8/NCb5fwDpYcA10QAYFIBvv6THxydUT1VekjpNUxIm/zg6ABff+khQOF4IxjMyNfH94MBo1rUbiQ9pKxiw6vWian17aoFXE4SJkQAYDo+Vuvb973QPr259BDnSKgcWyMyLmvNQgfnBcFkCADMxWKxvN776X80ai89xJmSqlaPLF/ph/W/SQ8BrkAAYC7Pdh10f8ue0iucLy0uyd/mu2jzcukhwGUEACYyoE2v4bc+IL3CVRrXqHvy3JmVueulhwCXEACYRbeGN7/W6wmLe6/t5WYtkhttP7R78/7t0kMAw+BloDCJG5MajrvnWe++9zcMw2qxjr/3nyY8zRQ6EQDIS4pKeK//K74+brqquyxfH9/3H3g1KSpBeghAACCtSmjEJw+9qeoU5ZDA4I8GvVG5Qrj0EGhHACCpnH/g1IFjqoZWlh7ibtFhkVMHjgnyC5AeAtUIAMT4WK3v3PdinZha0kNkpMUmvX3fSKuFn0GI4VVAEPNc96E9m9wivUJSjci4IP/AnzctlR4CpQgAZNyZ2fnpLgOlV8hrmJC2/9ihdXtypIdAI/78hIAmNeq+esfj0ivM4tVewxvXSJdeAY0IANwtOizy32pe9Fkcvj6+k/q/Gh0WKT0E6hAAuFWAr//7A0ZVCgmTHmIulULC3h8wiisHwM0IANxqdO+nPO76ju6RFpv0+p1PSq+ALjwJDPe5v9VtD7W7W3qFeaVE1zx25uTqnRukh0AL/gKAmzSukf5c9yHSK8zu+R5DGyXwhDDchADAHSLKh797/8s2H5v0ELOz+dje7fdSREhF6SFQgQDA5Xys1n/1fYGjb4opskKliX2f97HyswmX4zkAuNzwTv1v0/2O35KKqxTlcBi/b1klPQRejt8y4Fotajca2v5e6RWe55Fb+nLZALgaAYALRYRUnNDnOc47KwWrxTqxz/O8YQIuxU8mXMVisYy/dwTPZ5Za5Qrh4+/5p9dfJQ2CCABc5YHWd7RMbiy9wrO1Smn6QOs7pFfAaxEAuERqTCKHfTrF010GpkTXlF4B70QA4HwBvv4T+z7vZ+O4Nyfws/m+3fcFf18/6SHwQgQAzvc/3R6qVaWa9ArvkVi1+jP8OQUXIABwshuTGvZt8Q/pFd7m/la3ZSY2kF4Bb0MA4EwhAeXeuOsZXrjidFaL9c27ng0OCJIeAq9CAOBMI7oPialYRXqFd4oNrzqC0/TgVAQATtMsMePOzM7SK7xZ78wuvLIWTkQA4BxBfgE8+ONqFotlVK8ng/wCpIfASxAAOMdTXR6MDa8qvcL7xYVXfeLWAdIr4CUIAJygXnxK3xY9pVdocX+r2+rFp0ivgDcgACgrm9VndO+nOL/ebXys1tfvfNJm9ZEeAo/HDy3K6oE2d3BWgZvVianVr/Xt0ivg8QgAyiQ6LPLRjvdLr9DosY79qoZWll4Bz0YAUCYjez4c5BcovUKjcv6BL/xjmPQKeDYCgNJrmdykQ92W0iv06lS/dYvajaRXwIMRAJSSzcc2sufD0iu0G9nzEZuPTXoFPBUBQCn1a3Vbzch46RXa1apSjaP3UGoEAKURHhz6SIe+0itgGIbxWMf7KwZXkF4Bj0QAUBqPd+ofEhgsvQKGYRjlA4MfvaWf9Ap4JAKAEqsZGd+7WRfpFbjsnhu7JlSOlV4Bz0MAUGJPd3mQt6Gais3H9mzXQdIr4HkIAEqmYUIaL/00oQ51W2ZUT5VeAQ9DAFAyz3Z9SHoCCsd1g1FSBAAl0KbODY1rpEuvQOGa1qrfMrmJ9Ap4EgKA4rJYLI935NUmpvZU5we5Jg+KjwCguNqnt6gbnyy9AteTHpd0U2qm9Ap4DAKAYrFYLI/c0ld6BYr2WMd+/BGAYiIAKJabUjNTYxKlV6BoabFJbevwRwCKhQCgWB7pcJ/0BBTXsPZ9pCfAMxAAFK15UiMe/fcgDarXaZaYIb0CHoAAoGiDb75begJK5qF23GQoGgFAEdJik25Maii9AiXTMrlxnZha0itgdgQARRjQppf0BJTGwLa9pSfA7AgArqdqaOXODdpIr0BpdG7QpkpohPQKmBoBwPX0bdGDKw56KJuPrU/zHtIrYGoEANcU4OvPuf8erXezLv6+ftIrYF4EANfUNeOmsHJca9CDhQeHdmnQVnoFzIsA4Jr6cLVxz9enBY8C4ZoIAAqXHlc7PS5JegXKql58SlostyMKRwBQuLt49N9b8EQOroUAoBDl/AO7ZrSTXgHn6JZxU6BfgPQKmBEBQCE61msVHBAkvQLOERIYfAuXcUZhCAAKcXvTTtIT4Ey3N+0oPQFmRABwtdjwqk1r1pNeAWfKTGwQFVZZegVMhwDgal0zbuKSUl7GarF240kd/A0BwNW6ZNwkPQHO17UhAcDVCACuUDMyPiW6pvQKOF+dmFo1I+OlV8BcCACu0CWDkwO81q0c7IorEQBcoWO9VtIT4CrcuLgKAcBl1SJiakfVkF4BV0mJrhlfKVp6BUyEAOCyDuktpCfAtW5Ov1F6AkyEAOCydmnNpCfAtW5Oay49ASZCAHBJhaCQjIQ06RVwrUYJaeUDg6VXwCwIAC5pUbuRzeojvQKuZfOxtajdWHoFzIIA4JLWKTdIT4A7tExpIj0BZkEAcEmL2o2kJ8AduKHx/wgADMMwakbGVwmNkF4Bd4gOi0yoHCu9AqZAAGAYhpGZ2EB6AtwnMzFDegJMgQDAMAyjCec/a8Jx3/gTAYBhcI+gDDc3/kQAYMRVioqsUEl6BdynSmhEbHhV6RWQRwBgZFRPlZ4Ad+NGh0EAYBhGg2p1pCfA3epXS5GeAHkEAEa9eO4L1Kkblyw9AfIIgHY2H1tyNEdAq1MnppaPlR9/7fgO0K5mZHyAr7/0CrhboF9ADa4QqR4B0I4rAKuVEl1LegKEEQDtavP4j1a1oxKkJ0AYAdAuqUp16QmQUatKNekJEEYAtONeQC1uehAA1fx9/WLCq0ivgIy4SlG+Pr7SKyCJAKgWHx5ltfA9oJTN6hNfKUp6BSTxw69atYgY6QmQFB8RLT0BkgiAajGcCKZbHN8AuhEA1aLDIqUnQFJUGM8AqUYAVIsiALpFhVWWngBJBEC1KqFcBkC1KlwHQjcCoFrl8uHSEyCJCwEpRwBUiyhfUXoCJIWHhElPgCQCoFeAr3+QX6D0CkgKCSjnZ+O9YHoRAL3CylWQniDs1LnTp86dll4hjG8DzWzSAyCmfFCw9AQZCzYs/uTXWb/lrDh57rRhGOUDgzMTM+5u1qVVSlPpaQIqBAYfPHFEegVkEAC9KgSqC8Dxsycf/uilH9f99tf/ePLc6aw1C7PWLGybmjnh3hGhQeWl5okIDignPQFieAhIryD/IOkJbnX87MnuYwddde//Vz+u+6372EHHz5505ypx5ZR9G+CvCIBe2q4EOWzqi1sO5F7/Y7YcyB029UW3zDGLIP8A6QkQQwD0CvD1k57gPgs2LJ6//vfifOT89b8v2LDY1XvMQ9vvAfgrAqCXqtf/ffLrLBd9sKez+fBEoF4EQC8fNVcCcDgcv+WsKP7H/5azwuFwuG6PqfgSAMW03AXg7yxWLbf+qfNnTpbk9f4nz50+ff6M6/aYilXNtwH+jtse3u/cxfMl/SdnS/5PAI9DAPTS8ygHrsNut0tPgBgCoFdeQb70BMi7mJ8nPQFiCIBe5y9ekJ4AeefyeLBLLwKg15kLZ6UnQN7ZCwRALwKg1yk1L3TBdZw8d0p6AsQQAL2On9F16A0KdfwMAdCLAOh19Mxx6QmQ98fpY9ITIIYA6HXszMm8Al4BotqFvIsleoscvAwB0MvhcBw6eVR6BSRxKRjlCIBqe48elJ4ASfuO8Q2gGgFQbfcf+6QnQNKuP/ZLT4AkAqDaziN7pSdAUu7hPdITIIkAqLbt4C7pCZC09eBO6QmQRABUyynqEonwbkVeIxPejQCotu3gznx7gfQKyLiQd3HHod3SKyCJAKh2MT8vZ/8O6RWQsXn/dvKvHAHQLnvXJukJkMFNDwKg3eqdG6UnQMaq3A3SEyCMAGi3fPta6QmQsWLHOukJEEYAtMvZv+PEWc6DVOfIqWPbDvEiYO0IgHZ2h33x1tXSK+BuS7au5qLQIAAwFm1eJj0B7vZrzgrpCZBHAGAs3LhUegLcbcHGJdITII8AwNh+aDdnwqiy5UDuriOcAwgCAMMwDGPe2l+lJ8B95q3j5oZhEAD8ae7aX6QnwH3mrvlZegJMgQDAMAxj2bY1h078Ib0C7rD/+KGVueulV8AUCAAMwzAK7PbZq+ZLr4A7zFrxIy8AxZ8IAC75avn30hPgDl8t44bGJQQAl6zK3cDp8F5v496t6/bkSK+AWRAAXPbF4m+lJ8C1pv/OTYzLCAAum7Hku4v5edIr4Crn8y7MXJolvQImQgBw2ZFTx75d9ZP0CrjKf1fOP372pPQKmAgBwBUmL/yP9AS4yocLZkhPgLkQAFxhZe56jon3Sou3rFq7e7P0CpgLAcDV/nfeNOkJcL53fuBmxdUIAK72/dpFXCney2zYu/WnDYulV8B0CACuZnfY35o7VXoFnGlC1hTe/Yu/IwAoxH9X/pjDm8K8xYa9W+esXiC9AmZEAFCIArt9zOxJ0ivgHGNmT+LXfxSKAKBwWWt+5uVAXmDptmwu9oBrIQAonMPheOmrt/nN0aM5HI6Xv3pbegXMiwDgmpZvX/vNinnSK1B6Xy6by9H/uA4CgOt5+et3Tp8/K70CpXHq/JlXvnlHegVMjQDgeg4cPzx2zgfSK1Aab8x+n6u84foIAIrw4YIZHCHgcVbv3DDlZ451QhEIAIqQby8YPm1UfkG+9BAUV15B3vBprxXY7dJDYHYEAEVbv2fLxO8/ll6B4ho3Z/KmfdukV8ADEAAUy4SsKdm7NkmvQNFW7Fj3zrxPpFfAMxAAFEt+Qf7QqSPPXDgnPQTXc/r82Yc/einfXiA9BJ6BAKC4th3cNWLGWOkVuJ5nPh+Te3iP9Ap4DAKAEvhi8ZwvFs+RXoHCffrrrK+WfS+9Ap6EAKBknv38jfV7tkivwNWyd20a8Z9x0ivgYQgASuZ83oX+7z3zx+nj0kNw2eFTR/u/98yFvIvSQ+BhCABKbPcf+we892xeQZ70EBiGYVzIu9h/0jP7jh2SHgLPQwBQGku2rRk+7TXOChXncDgen/YqB3ejdAgASmnm0qw3vn1feoV2o2a9+/VyTmxFKREAlN6ErClTfp4pvUKv93/6nPd8oSwIAMrkuRnjv1w2V3qFRl8snjPyy4nSK+DZCADKxO6wP/bxK7NXzZceoss3K3544tNRPAeDMiIAKKt8e8GQKSNpgNt8s+KHh6e+yGGfKDsCACfIL8gfPPn5mUuzpId4v88Xfzts6khO+4FTEAA4R4Hd/ujHr0xeyHPCLvTe/M+HTxvF7/5wFpv0AHgPu8M+YsbYI6eODu/U32KxSM/xKg6HY9Ssd3nND5yLAMDJJmRN2XP0wJjeT/vZfKW3eIkLeRcfn/Yqr/eH0/EQEJxv5tKsXhOHcV6QUxw+dfT2t4Zy7w9XIABwiaXbsjuN7sfV5Msoe9emTqP7cdIDXIQAwFX2HD3QbezAz36fLT3EU33666zu4wZxyhtch+cA4EIX8i4+MW3U4i2rXr1jeDn/QOk5HuP0+bNPTx/z9XKu7gLX4i8AuNzMpVkdXrtvzc6N0kM8w6rcDR1ev497f7gBAYA77Di8u+vYgWPnfJBfkC+9xbzyCvLe+Pb97mMHcl1fuAcBgJvkF+SPnfNhpzH9eWa4UGt2buw4uv/47ybzLl+4DQGAW63fs6XzmAdGfvnW6fNnpbeYxenzZ5//z4Qubw7YuHer9BboQgDgbvn2gvfmf97q5d5fL5+n/DxLh8Px9fLvW7505wcLvuCAB7gfAYCMA8cPD5nyQrexA5dvXyu9Rcay7dld33xwyJSRB08ckd4CpXgZKCSt2LGu29iBHdJbPNl5QGLV6tJz3GTzvu2jZ0+am/2L9BBoRwAgLyv75+/XLuqS0XZY+z7enYFN+7a9lTV19qqf7A4e8IE8AgBTsDvsXy+fN2vFj+3Smj3YtnfjGunSi5xsydbV7/746Q/rflP+tAdMhQDAROwO+9zsX+Zm/1I3Prlfq9turd/G048UvZifN2vFDx8unJG9ixe/wnQIAMxozc6Nw6a++MLMCT0b39Lrhls98XGhTfu2Tf/925lLs46dOSG9BSgcAYB5HT19YtL86ZPmT0+PS+rRqH3nBm0jK1SSHlWE/ccP/Xfl/C+Xzl23J0d6C1AEAgAPkL1rc/auzS9++XZG9dSb05u3T2+eUDlWetQVth3c9f3aRVlrFq7MXc+j/PAUBAAew+6wL9uevWx79itf/yu+UnTL5MbNkxo1qVmvYnAFkT1HT59YvHXVos3LF2xcsuvIPpENQFkQAHiknUf2fvTLVx/98pXFYqkVGZ9RPbVB9dTU2MTaUQm+Pq563vhift6mfdvX7d68Mnf9yh3rthzcyS/78GgEAJ7N4XDkHMjNOZD755VnbD62hIiYxKoJCZVjq0XExFeKqhoWaTVKfIX6i/l5O4/s3X/s0K4/9u84vHv7od05+3fsOLSbk9rgTSzRgzOlNwAABHAWEAAoRQAAQCkCAABKEQAAUIoAAIBSBAAAlCIAAKAUAQAApQgAAChFAABAKQIAAEoRAABQigAAgFIEAACUIgAAoBQBAAClCAAAKEUAAEApAgAAShEAAFCKAACAUgQAAJQiAACgFAEAAKUIAAAoRQAAQCkCAABKEQAAUIoAAIBSBAAAlCIAAKAUAQAApQgAAChFAABAKQIAAEoRAABQigAAgFIEAACUIgAAoBQBAAClCAAAKEUAAEApAgAAShEAAFCKAACAUgQAAJQiAACgFAEAAKUIAAAoRQAAQCkCAABKEQAAUIoAAIBSBAAAlCIAAKAUAQAApQgAAChFAABAKQIAAEoRAABQigAAgFIEAACUIgAAoBQBAAClCAAAKEUAAEApAgAAShEAAFCKAACAUgQAAJQiAACgFAEAAKUIAAAoRQAAQCkCAABKEQAAUIoAAIBSBAAAlCIAAKAUAQAApQgAAChFAABAKQIAAEoRAABQigAAgFIEAACUIgAAoBQBAAClCAAAKEUAAEApAgAAShEAAFCKAACAUgQAAJQiAACgFAEAAKUIAAAoRQAAQCkCAABKEQAAUIoAAIBSBAAAlCIAAKAUAQAApQgAAChFAABAKQIAAEoRAABQigAAgFIEAACUIgAAoBQBAAClCAAAKEUAAEApAgAAShEAAFCKAACAUgQAAJQiAACgFAEAAKUIAAAoRQAAQCkCAABKEQAAUIoAAIBSBAAAlCIAAKAUAQAApQgAAChFAABAKQIAAEoRAABQigAAgFIEAACUIgAAoBQBAAClCAAAKEUAAEApAgAAShEAAFCKAACAUgQAAJQiAACgFAEAAKUIAAAoRQAAQCkCAABKEQAAUIoAAIBSBAAAlCIAAKDU/wEbGvbGrCk3WgAAAABJRU5ErkJggg==" alt="Role Garden logo"><span>Role Garden</span></a>
-    <nav class="navlinks"><a href="#product">Product</a><a href="#score">Score a Job</a><a href="#workspace">Applications</a></nav>
-    <div class="navcta"><a class="btn nav-signin" href="https://app.rolegarden.com">Sign in</a><a class="btn nav-start" href="https://app.rolegarden.com">Start free</a></div>
-  </div>
-</header>
-<main>
-<section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <div class="eyebrow">AI career growth platform</div>
-      <h1>Find better-fit roles and <span>move with confidence.</span></h1>
-      <p>Role Garden gives professionals a smarter way to monitor curated roles, score jobs found anywhere, and prepare for every interview stage with an AI career copilot.</p>
-      <div class="hero-actions"><a class="btn btn-primary" href="https://app.rolegarden.com">Start free</a><a class="btn btn-secondary" href="#product">Explore product</a></div>
-      
-      <div class="trust"><span><i class="check">✓</i>Resume-grounded matching</span><span><i class="check">✓</i>Score any job</span><span><i class="check">✓</i>Interview prep copilot</span></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="https://rolegarden.com/rolegarden_logo_square_512.png" alt="Role Garden" class="nav-logo-img">
+      <span class="nav-logo-name">Role Garden</span>
+    </a>
+    <div class="nav-center">
+      <a href="#why" class="nav-link">How It Works</a>
+      <a href="#matching" class="nav-link">Curated Matching</a>
+      <a href="#prep" class="nav-link">Interview Preparation</a>
     </div>
-    <div class="product-shell" aria-label="Role Garden product preview">
-      <div class="product-top"><div class="product-brand"><img src="data:image/png;base64,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" alt=""><span>Role Garden</span></div><div class="product-tabs"><span>Matches</span><span>Applications</span></div></div>
-      <div class="mock">
-        <aside class="mock-left"><div class="saved-title">Saved Searches</div><div class="saved-item active"><strong>Director – AdTech</strong><small>24 new matches</small></div><div class="saved-item"><strong>Account Executive</strong><small>12 new matches</small></div><div class="saved-item"><strong>Revenue Ops</strong><small>7 new matches</small></div><div class="new-search">+ New Search</div></aside>
-        <section class="mock-center"><div class="control-row"><div class="control">Remote, United States</div><div class="control">Remote only</div></div><h3>Recommended Matches</h3><div class="job-card"><div class="job-head"><div class="logo-square">P</div><div><div class="job-title">Sales Director</div><div class="job-company">Pixalate · Remote · $150K–$180K</div></div><div><div class="match-label">Strong Match</div><div class="match-bar"><span></span></div></div></div><div class="card-grid"><div class="card-block"><h4>Why you'll love it</h4><p>✓ AdTech background aligns</p><p>✓ Seniority matches search</p><p>✓ Remote-friendly role</p></div><div class="card-block challenge"><h4>Potential challenge</h4><p>• Location preference needs clarity</p><p>• Buyer audience may differ</p></div></div><div class="fit-row"><div class="fit-box"><strong>Fit summary</strong>Strong domain match with the right level and motion.</div><div class="fit-box"><strong>Recommendation</strong>Worth pursuing with a targeted application.</div></div></div></section>
-        <aside class="mock-right"><div class="score-box"><h4>Score This Job</h4><div class="drop">Paste job description<br>or URL</div><div class="score-btn">Score This Job</div></div><div class="profile-box"><h4>Your Profile</h4><div class="profile-line"><strong>Career Goal</strong>Account Executive</div><div class="profile-line"><strong>Resume</strong>Mike_Resume_2025.pdf</div><div class="profile-line"><strong>Dream Companies</strong>8 tracked</div></div></aside>
+    <div class="nav-right">
+      <a href="#" class="nav-signin">Sign In</a>
+      <a href="#" class="nav-cta">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1 class="hero-headline">Less applying.<br><em>More interviewing.</em></h1>
+    <p class="hero-sub">Find opportunities that fit your experience, tailor every application, and walk into every interview prepared.</p>
+    <div class="hero-ctas">
+      <a href="#" class="btn-primary">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L13 7L7 13M1 7H13" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Find My Opportunities
+      </a>
+      <a href="#why" class="btn-secondary">See How It Works</a>
+    </div>
+
+    <!-- JOURNEY VISUAL -->
+    <div class="journey">
+      <div class="journey-step">
+        <div class="journey-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 14V4M7 8l4-4 4 4" stroke="#1B6B3A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 16v1a2 2 0 002 2h12a2 2 0 002-2v-1" stroke="#1B6B3A" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <span class="journey-label">Upload Resume</span>
+      </div>
+      <div class="journey-arrow"></div>
+      <div class="journey-step">
+        <div class="journey-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="#1B6B3A" stroke-width="1.5"/><path d="M8 11l2 2 4-4" stroke="#1B6B3A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span class="journey-label">Matched Roles</span>
+      </div>
+      <div class="journey-arrow"></div>
+      <div class="journey-step">
+        <div class="journey-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="4" width="16" height="14" rx="2" stroke="#1B6B3A" stroke-width="1.5"/><path d="M7 9h8M7 12h5" stroke="#1B6B3A" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <span class="journey-label">Application</span>
+      </div>
+      <div class="journey-arrow"></div>
+      <div class="journey-step">
+        <div class="journey-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 3L4 6.5v5C4 15.5 7 19 11 20c4-1 7-4.5 7-8.5v-5L11 3z" stroke="#1B6B3A" stroke-width="1.5"/></svg>
+        </div>
+        <span class="journey-label">Interview Prep</span>
+      </div>
+      <div class="journey-arrow"></div>
+      <div class="journey-step">
+        <div class="journey-icon">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2l2.5 7H21l-6 4.5 2.5 7L11 16l-6.5 4.5 2.5-7L1 9h7.5L11 2z" stroke="#1B6B3A" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        </div>
+        <span class="journey-label">Offer</span>
       </div>
     </div>
   </div>
 </section>
-<section class="section" id="product">
-  <div class="container"><div class="section-head"><div class="eyebrow">Why Role Garden</div><h2>Career growth without the job-board noise.</h2><p>Use Role Garden to monitor better-fit opportunities, evaluate roles before applying, and turn strong matches into complete application workspaces.</p><div class="pill-row"><span class="pill">Curated roles</span><span class="pill">Saved searches</span><span class="pill">Score any job</span><span class="pill">Interview prep</span></div></div>
-  <div class="cards"><div class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></div><h3>Curated role matching</h3><p>See opportunities that align with your background, seniority, market, and career direction — not just keyword matches.</p></div><div class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/><path d="m7 7 10 10M17 7 7 17"/></svg></div><h3>Clear pursuit decisions</h3><p>Understand why a role fits, where the risks are, and whether it deserves your time before you start applying.</p></div><div class="card"><div class="icon"><svg viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg></div><h3>Copilot interview prep</h3><p>Prepare for recruiter screens, hiring managers, final rounds, and custom interview situations with role-specific guidance.</p></div></div></div>
+
+<!-- WHY ROLE GARDEN -->
+<section class="section section-white" id="why">
+  <div class="section-inner">
+    <div class="section-eyebrow">Why Role Garden</div>
+    <h2 class="section-title">A smarter way to land<br>your next opportunity.</h2>
+    <p class="section-sub">Most people spend hours searching, applying, and preparing without knowing if they are focusing on the right opportunities.</p>
+    <a href="#why" class="btn-primary" style="margin-bottom:32px;">See How It Works</a>
+    <div class="compare-grid">
+      <div class="compare-card">
+        <div class="compare-card-title">Traditional Job Search</div>
+        <div class="compare-item"><div class="compare-x"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1 1l6 6M7 1L1 7" stroke="#7A887E" stroke-width="1.4" stroke-linecap="round"/></svg></div>Scroll endless job boards</div>
+        <div class="compare-item"><div class="compare-x"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1 1l6 6M7 1L1 7" stroke="#7A887E" stroke-width="1.4" stroke-linecap="round"/></svg></div>Use the same resume everywhere</div>
+        <div class="compare-item"><div class="compare-x"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1 1l6 6M7 1L1 7" stroke="#7A887E" stroke-width="1.4" stroke-linecap="round"/></svg></div>Prepare the night before interviews</div>
+        <div class="compare-item"><div class="compare-x"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1 1l6 6M7 1L1 7" stroke="#7A887E" stroke-width="1.4" stroke-linecap="round"/></svg></div>Manage everything across tabs and docs</div>
+      </div>
+      <div class="compare-card rg">
+        <div class="compare-card-title">Role Garden</div>
+        <div class="compare-item"><div class="compare-check"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1 4l2 2 4-4" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Discover roles matched to your experience</div>
+        <div class="compare-item"><div class="compare-check"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1 4l2 2 4-4" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Tailor every resume and cover letter</div>
+        <div class="compare-item"><div class="compare-check"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1 4l2 2 4-4" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Prepare with personalized interview guidance</div>
+        <div class="compare-item"><div class="compare-check"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1 4l2 2 4-4" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Keep everything in one workspace</div>
+      </div>
+    </div>
+  </div>
 </section>
-<section class="section">
-  <div class="container split"><div class="copy"><div class="eyebrow">Saved Searches</div><h2>Track multiple career paths at once.</h2><p>Create saved searches for different roles, levels, or industries. Role Garden keeps surfacing new matches so you can stay active or passive without starting over every time.</p><div class="bullets"><div><i class="check">✓</i><span>Save searches by target role, industry, or direction</span></div><div><i class="check">✓</i><span>Auto-run searches and receive match alerts</span></div><div><i class="check">✓</i><span>Compare multiple career paths in one workspace</span></div></div></div><div class="feature-visual"><div class="search-list"><div class="search-row"><div><strong>Director – AdTech</strong><span>Remote · US · leadership track</span></div><em class="new-pill">24 new</em></div><div class="search-row"><div><strong>Account Executive – SaaS</strong><span>Remote · growth teams</span></div><em class="new-pill">12 new</em></div><div class="search-row"><div><strong>Revenue Operations</strong><span>Hybrid · systems & process</span></div><em class="new-pill">7 new</em></div></div></div></div>
+
+<!-- CURATED MATCHING -->
+<section class="section section-cream" id="matching">
+  <div class="section-inner">
+    <div class="two-col">
+      <div>
+        <div class="section-eyebrow">Curated Matching</div>
+        <h2 class="section-title">Find opportunities that fit your career.</h2>
+        <p class="section-sub">Role Garden matches your experience with opportunities from real employer career pages, helping you focus on roles where you are more likely to succeed.</p>
+        <a href="#" class="btn-primary">Find My Opportunities</a>
+      </div>
+      <div class="assessed-card-preview" style="border:1px solid var(--green-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:0 4px 20px rgba(27,107,58,0.12);">
+        <div class="assessed-accent"></div>
+        <div class="assessed-header-prev">
+          <div class="ac-left">
+            <div class="ac-logo">S</div>
+            <div>
+              <div class="ac-badge"><svg width="9" height="9" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" stroke="#1B6B3A" stroke-width="1.1"/><path d="M3 5l1.5 1.5L7 3.5" stroke="#1B6B3A" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>Your Assessment</div>
+              <div class="ac-role">Enterprise Account Executive</div>
+              <div class="ac-co">Stripe · Remote (US) · Full-time</div>
+            </div>
+          </div>
+          <div class="ac-match">
+            <span class="match-lbl">Strong Match</span>
+            <div class="bar-track"><div class="bar-fill" style="width:84%;"></div></div>
+          </div>
+        </div>
+        <div class="assessed-body-prev">
+          <div>
+            <div class="col-lbl col-green">Why You'll Love It</div>
+            <div class="bullet-item"><div class="bullet-chk"><svg width="7" height="7" viewBox="0 0 8 8" fill="none"><path d="M1 4l2 2 4-4" stroke="#1B6B3A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Enterprise background aligns directly</div>
+            <div class="bullet-item"><div class="bullet-chk"><svg width="7" height="7" viewBox="0 0 8 8" fill="none"><path d="M1 4l2 2 4-4" stroke="#1B6B3A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Multi-stakeholder deal experience is a fit</div>
+            <div class="bullet-item"><div class="bullet-chk"><svg width="7" height="7" viewBox="0 0 8 8" fill="none"><path d="M1 4l2 2 4-4" stroke="#1B6B3A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Remote role matches your preference</div>
+          </div>
+          <div>
+            <div class="col-lbl col-amber">Potential Challenge</div>
+            <div class="bullet-item"><div class="bullet-dot"></div>Limited direct fintech exposure</div>
+            <div class="bullet-item"><div class="bullet-dot"></div>Competitive applicant pool</div>
+          </div>
+        </div>
+        <!-- FULL CARD — Summary + Actions -->
+        <div style="padding:16px 22px;border-top:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;gap:16px;background:var(--cream);">
+          <div>
+            <div style="font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:5px;">Fit Summary</div>
+            <div style="font-size:12px;color:var(--ink-mid);line-height:1.55;">Strong enterprise background with transferable skills. Fintech gap is bridgeable.</div>
+          </div>
+          <div>
+            <div style="font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:5px;">Recommendation</div>
+            <div style="font-size:12px;color:var(--ink-mid);line-height:1.55;">A strong opportunity worth pursuing. Prepare to address the fintech question.</div>
+          </div>
+        </div>
+        <div style="padding:14px 22px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;">
+          <button style="background:var(--green);color:white;border:none;border-radius:var(--r-sm);padding:10px 22px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:7px;">Pursue This <svg width="11" height="11" viewBox="0 0 13 13" fill="none"><path d="M2 6.5H11M7 2.5l4 4-4 4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <a href="#" style="display:flex;align-items:center;gap:5px;font-size:12px;color:var(--ink-muted);font-weight:600;text-decoration:none;padding:7px 10px;border:1px solid var(--border);border-radius:var(--r-sm);"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M5 2H2a1 1 0 00-1 1v7a1 1 0 001 1h7a1 1 0 001-1V7M7.5 1.5h3v3M10.5 1.5L5.5 6.5" stroke="#7A887E" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>View posting</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-<section class="section" id="score">
-  <div class="container split"><div class="score-demo"><div class="eyebrow">Score This Job</div><h2 style="font-size:34px;line-height:1.1;letter-spacing:-.04em;margin:10px 0 8px;">Already found a role elsewhere?</h2><p style="color:var(--muted);">Paste a job description, URL, or recruiter email and get a clear read on fit, risks, and next steps.</p><div class="paste-demo">Paste job description or URL</div><a class="btn btn-primary" href="https://app.rolegarden.com" style="width:100%;">Score This Job</a></div><div class="copy"><div class="eyebrow">Instant clarity</div><h2>Know if it is worth pursuing before you apply.</h2><p>Role Garden returns the same structured match card used in your recommendations: why you fit, potential challenges, fit summary, and recommendation.</p><div class="result-demo"><div><h3>Strong Match</h3><p style="color:var(--muted);">Your AdTech sales background and enterprise motion align closely. The main risk is positioning your experience for this buyer segment.</p></div><a class="btn btn-secondary" href="https://app.rolegarden.com">Start Application</a></div></div></div>
+
+<!-- APPLICATION PACKAGE -->
+<section class="section section-white">
+  <div class="section-inner">
+    <div class="two-col">
+      <div class="workspace-preview">
+        <div class="wp-header">
+          <div class="wp-dot" style="background:#FF5F57;"></div>
+          <div class="wp-dot" style="background:#FEBC2E;margin-left:6px;"></div>
+          <div class="wp-dot" style="background:#28C840;margin-left:6px;"></div>
+          <span style="font-size:12px;color:rgba(255,255,255,.5);margin-left:12px;">Application Workspace</span>
+        </div>
+        <div class="wp-tabs">
+          <div class="wp-tab active">Assessment</div>
+          <div class="wp-tab">Resume</div>
+          <div class="wp-tab">Cover Letter</div>
+          <div class="wp-tab">Outreach</div>
+        </div>
+        <div class="wp-body">
+          <div class="wp-item">
+            <div class="wp-item-icon"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><rect x="2" y="2" width="10" height="10" rx="2" stroke="#1B6B3A" stroke-width="1.3"/><path d="M4 7h6M4 9h4" stroke="#1B6B3A" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+            <div><div class="wp-item-label">Tailored Resume</div><div class="wp-item-sub">Optimized for this role</div></div>
+          </div>
+          <div class="wp-item">
+            <div class="wp-item-icon"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 3h10v8a1 1 0 01-1 1H3a1 1 0 01-1-1V3z" stroke="#1B6B3A" stroke-width="1.3"/><path d="M5 6h4M5 8h3" stroke="#1B6B3A" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+            <div><div class="wp-item-label">Cover Letter</div><div class="wp-item-sub">Personalized to the opportunity</div></div>
+          </div>
+          <div class="wp-item">
+            <div class="wp-item-icon"><svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2 4l5 4 5-4" stroke="#1B6B3A" stroke-width="1.3" stroke-linecap="round"/><rect x="2" y="3" width="10" height="8" rx="1" stroke="#1B6B3A" stroke-width="1.3"/></svg></div>
+            <div><div class="wp-item-label">Recruiter Outreach</div><div class="wp-item-sub">Ready to send</div></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="section-eyebrow">Application Package</div>
+        <h2 class="section-title">Stand out before you hit Apply.</h2>
+        <p class="section-sub">Generate resumes and cover letters tailored to every opportunity. Not generic templates.</p>
+        <a href="#" class="btn-primary">See an Application Package</a>
+      </div>
+    </div>
+  </div>
 </section>
-<section class="section workspace" id="workspace">
-  <div class="container"><div class="section-head"><div class="eyebrow">Application Workspace</div><h2>From first match to final interview.</h2><p>When a role is worth pursuing, Role Garden turns it into a focused workspace for documents, outreach, notes, and prep.</p></div><div class="workspace-grid"><div class="workspace-card"><span class="solid-icon small"><svg viewBox="0 0 24 24"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 15v-4"/><path d="M12 15V8"/><path d="M16 15v-6"/></svg></span><strong>Assessment</strong><p>Understand match strength, salary, gaps, and next steps.</p></div><div class="workspace-card"><span class="solid-icon small"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/></svg></span><strong>Tailored Resume</strong><p>Shape your resume around the role without losing your voice.</p></div><div class="workspace-card"><span class="solid-icon small"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></span><strong>Outreach</strong><p>Draft recruiter, referral, and hiring manager messages.</p></div><div class="workspace-card"><span class="solid-icon small"><svg viewBox="0 0 24 24"><path d="M16 11a4 4 0 1 0-8 0"/><path d="M5 21a7 7 0 0 1 14 0"/><path d="M18 8h3"/><path d="M19.5 6.5v3"/></svg></span><strong>Interview Prep</strong><p>Prepare for recruiter and hiring manager conversations.</p></div><div class="workspace-card"><span class="solid-icon small"><svg viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6z"/><path d="M15 3v4h4"/><path d="M9 12h6"/><path d="M9 16h5"/></svg></span><strong>Notes</strong><p>Keep application context carried across every prep stage.</p></div></div></div>
+
+<!-- INTERVIEW PREPARATION -->
+<section class="section section-cream" id="prep">
+  <div class="section-inner">
+    <div class="two-col">
+      <div>
+        <div class="section-eyebrow">Interview Preparation</div>
+        <h2 class="section-title">Walk into every interview prepared.</h2>
+        <p class="section-sub">Practice recruiter screens, hiring manager interviews, and final rounds with guidance built specifically for the opportunity you are pursuing.</p>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px;">
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--ink-mid);"><div style="width:6px;height:6px;background:var(--green);border-radius:50%;flex-shrink:0;"></div>Anticipate recruiter questions</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--ink-mid);"><div style="width:6px;height:6px;background:var(--green);border-radius:50%;flex-shrink:0;"></div>Practice hiring manager conversations</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--ink-mid);"><div style="width:6px;height:6px;background:var(--green);border-radius:50%;flex-shrink:0;"></div>Prepare for final round interviews</div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--ink-mid);"><div style="width:6px;height:6px;background:var(--green);border-radius:50%;flex-shrink:0;"></div>Understand the company before the first call</div>
+        </div>
+        <a href="#" class="btn-primary">See Interview Prep</a>
+      </div>
+      <div class="prep-preview">
+        <div class="prep-section">
+          <div class="prep-section-title">Expected Questions · Recruiter Screen</div>
+          <div class="prep-q">"Walk me through your most recent role."</div>
+          <div class="prep-q">"Why are you interested in this opportunity?"</div>
+          <div class="prep-q">"What is your typical deal size?"</div>
+        </div>
+        <div class="prep-section">
+          <div class="prep-section-title">Stories to Tell · HM Round</div>
+          <div class="prep-q">A $1.2M multi-stakeholder enterprise close</div>
+          <div class="prep-q">Account expansion from $200K to $800K ARR</div>
+        </div>
+        <div class="prep-section">
+          <div class="prep-section-title">Questions to Ask</div>
+          <div class="prep-q">"What does the enterprise motion look like 18 months from now?"</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-<section class="section"><div class="container"><div class="section-head"><div class="eyebrow">FAQ</div><h2>Common questions</h2></div><div class="faq"><div class="faq-item"><h3>Is Role Garden only for active job seekers?</h3><p>No. It supports active search and passive career monitoring for employed professionals.</p></div><div class="faq-item"><h3>Can I score a job from any company site?</h3><p>Yes. Paste the job description, URL, or recruiter email content into Score This Job.</p></div><div class="faq-item"><h3>Does Role Garden apply for me?</h3><p>No. It helps you decide, tailor, and prepare. You stay in control of every application.</p></div><div class="faq-item"><h3>What happens after I start an application?</h3><p>Role Garden creates a workspace with assessments, documents, outreach, notes, and interview prep.</p></div></div></div></section>
-<section class="final"><div class="container"><h2>Make your next career move with more context.</h2><p>Find better-fit roles, score opportunities anywhere, and prepare with confidence.</p><a class="btn" href="https://app.rolegarden.com">Start free</a></div></section>
-</main>
-<footer><div class="container footer"><div>© 2026 Role Garden LLC. All rights reserved.</div><div class="footer-links"><a href="#">Privacy</a><a href="#">Terms</a><a href="mailto:support@rolegarden.com">Support</a></div></div></footer>
+
+<!-- ONE WORKSPACE -->
+<section class="section section-white">
+  <div class="section-inner" style="text-align:center;">
+    <div class="section-eyebrow" style="justify-content:center;">Everything in one place</div>
+    <h2 class="section-title" style="margin-bottom:14px;">One Workspace. Every Opportunity.</h2>
+    <p class="section-sub" style="margin:0 auto 36px;">Keep your resume, cover letter, outreach, interview prep, notes, and AI conversations together in one organized workspace.</p>
+    <div class="workspace-chips" style="justify-content:center;">
+      <div class="ws-chip">Resume</div>
+      <div class="ws-chip">Cover Letter</div>
+      <div class="ws-chip">Interview Prep</div>
+      <div class="ws-chip">Recruiter Outreach</div>
+      <div class="ws-chip">Notes</div>
+      <div class="ws-chip">AI Copilot</div>
+    </div>
+    <a href="#" class="btn-primary">Explore the Workspace</a>
+  </div>
+</section>
+
+<!-- IS THIS WORTH PURSUING -->
+<section class="section section-cream">
+  <div class="section-inner">
+    <div class="worth-card">
+      <div class="worth-left">
+        <div class="section-eyebrow" style="margin-bottom:12px;">Assess Any Opportunity</div>
+        <h2 style="font-size:36px;font-weight:800;color:var(--ink);letter-spacing:-0.025em;line-height:1.15;margin-bottom:12px;">Is this worth pursuing?</h2>
+        <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:28px;">Paste any job description and Role Garden will evaluate your fit, tailor your application, and help you prepare for interviews.</p>
+        <a href="#" class="btn-primary">Assess an Opportunity</a>
+      </div>
+      <div class="worth-preview">
+        <div class="assessed-card-preview" style="transform:scale(0.88);transform-origin:top right;">
+          <div class="assessed-accent"></div>
+          <div class="assessed-header-prev">
+            <div class="ac-left">
+              <div class="ac-logo" style="background:#000000;">O</div>
+              <div>
+                <div class="ac-badge"><svg width="9" height="9" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" stroke="#1B6B3A" stroke-width="1.1"/><path d="M3 5l1.5 1.5L7 3.5" stroke="#1B6B3A" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>Your Assessment</div>
+                <div class="ac-role">Account Executive, Enterprise</div>
+                <div class="ac-co">OpenAI · Remote (US)</div>
+              </div>
+            </div>
+            <div class="ac-match">
+              <span class="match-lbl">Strong Match</span>
+              <div class="bar-track"><div class="bar-fill" style="width:79%;"></div></div>
+            </div>
+          </div>
+          <div class="assessed-body-prev">
+            <div>
+              <div class="col-lbl col-green">Why You'll Love It</div>
+              <div class="bullet-item"><div class="bullet-chk"><svg width="7" height="7" viewBox="0 0 8 8" fill="none"><path d="M1 4l2 2 4-4" stroke="#1B6B3A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Enterprise SaaS motion maps directly</div>
+              <div class="bullet-item"><div class="bullet-chk"><svg width="7" height="7" viewBox="0 0 8 8" fill="none"><path d="M1 4l2 2 4-4" stroke="#1B6B3A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Technical buyer experience is a strong signal</div>
+            </div>
+            <div>
+              <div class="col-lbl col-amber">Potential Challenge</div>
+              <div class="bullet-item"><div class="bullet-dot"></div>AI product domain is a new vertical</div>
+            </div>
+          </div>
+        </div>
+        <div class="worth-fade"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- READY FOR YOUR NEXT OPPORTUNITY -->
+<section class="final-section">
+  <div class="final-inner">
+    <div class="section-eyebrow" style="justify-content:center;">Get Started</div>
+    <h2 class="final-title">Ready for your next opportunity?</h2>
+    <p class="final-sub">Discover. Decide. Prepare. Win.</p>
+    <a href="#" class="btn-primary" style="font-size:16px;padding:15px 32px;display:inline-flex;">Unlock My Career Workspace</a>
+    <p class="final-price">7-day free trial, then $39/month. Cancel anytime.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <div class="section-eyebrow" style="margin-bottom:12px;">FAQ</div>
+    <h2 style="font-size:36px;font-weight:800;color:var(--ink);letter-spacing:-0.03em;margin-bottom:40px;">Common questions.</h2>
+
+    <div class="faq-item"><button class="faq-trigger" onclick="toggleFaq(this)"><span class="faq-q">How can I tell if I am qualified for a job?</span><svg class="faq-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="#7A887E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-body">Role Garden compares your resume against the job description and shows you exactly where you are a strong fit and where there are gaps, before you spend time applying.</div></div>
+
+    <div class="faq-item"><button class="faq-trigger" onclick="toggleFaq(this)"><span class="faq-q">Should I apply if I do not meet every requirement?</span><svg class="faq-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="#7A887E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-body">Usually yes. Most job descriptions are aspirational. Role Garden helps you understand which requirements are core to the role versus nice to haves, so you can make a smarter decision.</div></div>
+
+    <div class="faq-item"><button class="faq-trigger" onclick="toggleFaq(this)"><span class="faq-q">How do I tailor my resume for a specific job?</span><svg class="faq-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="#7A887E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-body">Role Garden generates a version of your resume optimized for each opportunity, highlighting the experience that is most relevant to that specific role and employer.</div></div>
+
+    <div class="faq-item"><button class="faq-trigger" onclick="toggleFaq(this)"><span class="faq-q">What is the best way to prepare for a recruiter interview?</span><svg class="faq-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="#7A887E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-body">Know your story, know the company, and know what they are likely to ask. Role Garden builds a custom recruiter prep guide for every opportunity, including your positioning, expected questions, and what to ask the recruiter.</div></div>
+
+    <div class="faq-item"><button class="faq-trigger" onclick="toggleFaq(this)"><span class="faq-q">What questions should I ask during an interview?</span><svg class="faq-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="#7A887E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-body">The best questions are specific to the company and role. Role Garden generates interview questions tailored to each opportunity, so you are never scrambling to think of something to ask.</div></div>
+
+    <div class="faq-item"><button class="faq-trigger" onclick="toggleFaq(this)"><span class="faq-q">What is the difference between a recruiter screen and a hiring manager interview?</span><svg class="faq-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="#7A887E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-body">Recruiter screens focus on fit, logistics, and compensation. Hiring manager interviews go deep on your experience, skills, and how you would approach the role. Role Garden prepares you differently for each stage.</div></div>
+
+    <div class="faq-item"><button class="faq-trigger" onclick="toggleFaq(this)"><span class="faq-q">How do I prepare for a hiring manager interview?</span><svg class="faq-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="#7A887E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-body">Prepare specific stories from your experience that demonstrate the competencies the role requires. Role Garden matches your STAR stories to the themes of each opportunity and helps you articulate them clearly.</div></div>
+
+    <div class="faq-item"><button class="faq-trigger" onclick="toggleFaq(this)"><span class="faq-q">Can AI help me prepare for interviews?</span><svg class="faq-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="#7A887E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-body">Yes, when it is built around your actual experience and the specific opportunity. Role Garden does not give generic advice. Every prep session is personalized to your background and the role you are pursuing.</div></div>
+
+    <div class="faq-item"><button class="faq-trigger" onclick="toggleFaq(this)"><span class="faq-q">How many jobs should I apply to every week?</span><svg class="faq-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="#7A887E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-body">Fewer, better targeted applications outperform high volume spray and pray. Role Garden helps you focus on opportunities where you are genuinely competitive, so every application is worth making.</div></div>
+
+    <div class="faq-item"><button class="faq-trigger" onclick="toggleFaq(this)"><span class="faq-q">Is my resume private?</span><svg class="faq-chevron" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="#7A887E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="faq-body">Your resume powers your matching and prep. Role Garden does not share it with employers. It stays private to your account.</div></div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:var(--ink);padding:56px 40px 32px;">
+  <div style="max-width:1200px;margin:0 auto;">
+
+    <!-- TOP ROW -->
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;">
+
+      <!-- BRAND -->
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+          <img src="https://rolegarden.com/rolegarden_logo_square_512.png" alt="Role Garden" style="width:28px;height:28px;border-radius:6px;object-fit:cover;">
+          <span style="font-size:13px;font-weight:800;letter-spacing:.08em;color:var(--white);text-transform:uppercase;">Role Garden</span>
+        </div>
+        <p style="font-size:13px;color:rgba(255,255,255,.45);line-height:1.65;margin-bottom:20px;">Cultivate your career.</p>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <!-- LinkedIn -->
+          <a href="#" style="width:34px;height:34px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:8px;display:flex;align-items:center;justify-content:center;text-decoration:none;transition:background .15s;" onmouseover="this.style.background='rgba(255,255,255,.16)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="rgba(255,255,255,.7)"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <!-- Instagram -->
+          <a href="#" style="width:34px;height:34px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:8px;display:flex;align-items:center;justify-content:center;text-decoration:none;transition:background .15s;" onmouseover="this.style.background='rgba(255,255,255,.16)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(255,255,255,.7)" stroke="none"/></svg>
+          </a>
+          <!-- Facebook -->
+          <a href="#" style="width:34px;height:34px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:8px;display:flex;align-items:center;justify-content:center;text-decoration:none;transition:background .15s;" onmouseover="this.style.background='rgba(255,255,255,.16)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="rgba(255,255,255,.7)"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- PRODUCT -->
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px;">Product</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <a href="#why" style="font-size:14px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.6)'">How It Works</a>
+          <a href="#matching" style="font-size:14px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Curated Matching</a>
+          <a href="#prep" style="font-size:14px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Interview Preparation</a>
+          <a href="#" style="font-size:14px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Application Workspace</a>
+          <a href="#faq" style="font-size:14px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.6)'">FAQ</a>
+        </div>
+      </div>
+
+      <!-- COMPANY -->
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px;">Company</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <a href="#" style="font-size:14px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.6)'">About</a>
+          <a href="mailto:hello@rolegarden.com" style="font-size:14px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Contact Us</a>
+          <a href="#" style="font-size:14px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Privacy Policy</a>
+          <a href="#" style="font-size:14px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Terms of Service</a>
+        </div>
+      </div>
+
+      <!-- GET STARTED -->
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px;">Get Started</div>
+        <p style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.65;margin-bottom:16px;">Find opportunities that fit your experience and prepare to win.</p>
+        <a href="#" style="display:inline-flex;align-items:center;gap:7px;background:var(--green);color:white;text-decoration:none;padding:11px 20px;border-radius:var(--r-sm);font-size:13px;font-weight:700;transition:background .15s;" onmouseover="this.style.background='var(--green-mid)'" onmouseout="this.style.background='var(--green)'">
+          <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M7 1L13 7L7 13M1 7H13" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Unlock My Career Workspace
+        </a>
+        <p style="font-size:11px;color:rgba(255,255,255,.3);margin-top:10px;">7-day free trial, then $39/month.</p>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM ROW -->
+    <div style="border-top:1px solid rgba(255,255,255,.08);padding-top:24px;display:flex;align-items:center;justify-content:space-between;">
+      <p style="font-size:13px;color:rgba(255,255,255,.25);">© 2026 Role Garden, LLC. All rights reserved.</p>
+      <div style="display:flex;gap:20px;">
+        <a href="#" style="font-size:12px;color:rgba(255,255,255,.25);text-decoration:none;">Privacy</a>
+        <a href="#" style="font-size:12px;color:rgba(255,255,255,.25);text-decoration:none;">Terms</a>
+        <a href="mailto:hello@rolegarden.com" style="font-size:12px;color:rgba(255,255,255,.25);text-decoration:none;">hello@rolegarden.com</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  item.classList.toggle('open');
+}
+</script>
+
 </body>
 </html>
