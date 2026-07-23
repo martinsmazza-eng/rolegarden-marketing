@@ -133,6 +133,71 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-seri
 .faq-body { font-size:14px; color:var(--ink-mid); line-height:1.7; padding-bottom:20px; display:none; }
 .faq-item.open .faq-body { display:block; }
 .faq-item.open .faq-chevron { transform:rotate(180deg); }
+
+/* ─── MOBILE RESPONSIVE ─── */
+@media (max-width: 768px) {
+
+  /* NAV */
+  .nav-inner { padding: 0 20px; }
+  .nav-center { display: none; }
+  .nav-signin { display: none; }
+
+  /* HERO */
+  .hero { padding: 56px 20px 48px; }
+  .hero-headline { font-size: 36px; letter-spacing: -0.03em; }
+  .hero-sub { font-size: 16px; margin-bottom: 0; }
+  .hero-ctas { display: none; }
+
+  /* SECTIONS */
+  .section { padding: 56px 20px; }
+  .section-title { font-size: 28px; }
+
+  /* TWO-COL → SINGLE COLUMN, text first */
+  .two-col {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  /* "Get Through the Noise" has visual first in HTML — push text before it */
+  .two-col > .workspace-preview { order: 2; }
+  .two-col > div:not(.workspace-preview):not(.assessed-card-preview):not(.prep-preview) { order: 1; }
+  /* Matching section: text col is first in HTML already, card second — correct */
+  .assessed-card-preview { order: 2; width: 100%; }
+  /* Prep section: text col first in HTML, preview second — correct */
+  .prep-preview { order: 2; width: 100%; }
+
+  /* Workspace + prep previews — full width, no overflow */
+  .workspace-preview { width: 100%; max-width: 100%; overflow: hidden; }
+  .prep-preview { width: 100%; max-width: 100%; overflow: hidden; }
+
+  /* COMPARE GRID → SINGLE COLUMN */
+  .compare-grid { grid-template-columns: 1fr; gap: 16px; }
+
+  /* FINAL CTA */
+  .final-section { padding: 56px 20px; }
+  .final-title { font-size: 28px; }
+
+  /* FAQ */
+  .faq-section { padding: 56px 20px; }
+
+  /* FOOTER */
+  .footer-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px !important;
+  }
+  footer > div > div[style*="justify-content:space-between"] {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* FOOTER → SINGLE COLUMN */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -391,7 +456,7 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-seri
 <!-- FOOTER -->
 <footer style="background:var(--ink);padding:56px 40px 32px;">
   <div style="max-width:1200px;margin:0 auto;">
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;" class="footer-grid">
 
       <!-- BRAND -->
       <div>
