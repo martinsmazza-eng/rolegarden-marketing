@@ -49,14 +49,6 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-seri
 .btn-secondary { background:var(--white); color:var(--ink); border:1.5px solid var(--border); border-radius:var(--r-sm); padding:13px 24px; font-size:15px; font-weight:600; cursor:pointer; font-family:inherit; text-decoration:none; transition:background .15s, border-color .15s, box-shadow .15s; box-shadow:var(--shadow-sm); }
 .btn-secondary:hover { background:var(--cream); border-color:var(--ink-muted); box-shadow:var(--shadow-md); }
 
-/* JOURNEY */
-.journey { display:flex; align-items:center; justify-content:center; gap:0; }
-.journey-step { display:flex; flex-direction:column; align-items:center; gap:10px; }
-.journey-icon { width:80px; height:80px; background:var(--white); border:1px solid var(--border); border-radius:var(--r-md); display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-sm); }
-.journey-label { font-size:11px; font-weight:600; color:var(--ink-mid); }
-.journey-arrow { width:60px; height:3px; background:var(--border); margin:0 6px; margin-bottom:22px; position:relative; flex-shrink:0; }
-.journey-arrow::after { content:'›'; position:absolute; right:-10px; top:-14px; color:var(--ink-muted); font-size:24px; line-height:1; }
-
 /* SECTIONS */
 .section { padding:88px 40px; }
 .section-inner { max-width:1100px; margin:0 auto; }
@@ -177,36 +169,6 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-seri
       <a href="#why" class="btn-secondary">See How It Works</a>
     </div>
 
-    <!-- JOURNEY VISUAL — 4 steps, no Application icon -->
-    <div class="journey">
-      <div class="journey-step">
-        <div class="journey-icon">
-          <svg width="42" height="42" viewBox="0 0 22 22" fill="none"><path d="M11 14V4M7 8l4-4 4 4" stroke="#1B6B3A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 16v1a2 2 0 002 2h12a2 2 0 002-2v-1" stroke="#1B6B3A" stroke-width="1.6" stroke-linecap="round"/></svg>
-        </div>
-        <span class="journey-label">Upload Resume</span>
-      </div>
-      <div class="journey-arrow"></div>
-      <div class="journey-step">
-        <div class="journey-icon">
-          <svg width="42" height="42" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="#1B6B3A" stroke-width="1.5"/><path d="M8 11l2 2 4-4" stroke="#1B6B3A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <span class="journey-label">Matched Roles</span>
-      </div>
-      <div class="journey-arrow"></div>
-      <div class="journey-step">
-        <div class="journey-icon">
-          <svg width="42" height="42" viewBox="0 0 22 22" fill="none"><path d="M11 3L4 6.5v5C4 15.5 7 19 11 20c4-1 7-4.5 7-8.5v-5L11 3z" stroke="#1B6B3A" stroke-width="1.5"/></svg>
-        </div>
-        <span class="journey-label">Interview Prep</span>
-      </div>
-      <div class="journey-arrow"></div>
-      <div class="journey-step">
-        <div class="journey-icon">
-          <svg width="42" height="42" viewBox="0 0 22 22" fill="none"><path d="M11 2l2.5 7H21l-6 4.5 2.5 7L11 16l-6.5 4.5 2.5-7L1 9h7.5L11 2z" stroke="#1B6B3A" stroke-width="1.5" stroke-linejoin="round"/></svg>
-        </div>
-        <span class="journey-label">Offer</span>
-      </div>
-    </div>
   </div>
 </section>
 
