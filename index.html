@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Role Garden — Less applying. More interviewing.</title>
+<title>Role Garden — Your career, in one workspace.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <style>
@@ -52,10 +52,10 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-seri
 /* JOURNEY */
 .journey { display:flex; align-items:center; justify-content:center; gap:0; }
 .journey-step { display:flex; flex-direction:column; align-items:center; gap:10px; }
-.journey-icon { width:52px; height:52px; background:var(--white); border:1px solid var(--border); border-radius:var(--r-md); display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-sm); }
+.journey-icon { width:80px; height:80px; background:var(--white); border:1px solid var(--border); border-radius:var(--r-md); display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-sm); }
 .journey-label { font-size:11px; font-weight:600; color:var(--ink-mid); }
-.journey-arrow { width:32px; height:1px; background:var(--border); margin:0 4px; margin-bottom:22px; position:relative; }
-.journey-arrow::after { content:'›'; position:absolute; right:-6px; top:-9px; color:var(--ink-muted); font-size:14px; }
+.journey-arrow { width:60px; height:3px; background:var(--border); margin:0 6px; margin-bottom:22px; position:relative; flex-shrink:0; }
+.journey-arrow::after { content:'›'; position:absolute; right:-10px; top:-14px; color:var(--ink-muted); font-size:24px; line-height:1; }
 
 /* SECTIONS */
 .section { padding:88px 40px; }
@@ -120,12 +120,6 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-seri
 .prep-q { font-size:13px; font-weight:600; color:var(--ink); padding:8px 12px; background:var(--cream); border-radius:var(--r-sm); margin-bottom:5px; }
 .prep-q:last-child { margin-bottom:0; }
 
-/* WORTH PURSUING SECTION */
-.worth-card { background:var(--white); border:1px solid var(--border); border-radius:var(--r-lg); padding:40px; display:flex; align-items:center; justify-content:space-between; gap:48px; box-shadow:var(--shadow-sm); }
-.worth-left { flex:1; }
-.worth-preview { flex-shrink:0; width:300px; position:relative; }
-.worth-fade { position:absolute; bottom:0; left:0; right:0; height:80px; background:linear-gradient(transparent, var(--white)); border-radius:0 0 var(--r-lg) var(--r-lg); pointer-events:none; }
-
 /* ONE WORKSPACE */
 .workspace-chips { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:36px; }
 .ws-chip { background:var(--cream); border:1px solid var(--border); border-radius:var(--r-pill); padding:8px 18px; font-size:13px; color:var(--ink-mid); font-weight:500; }
@@ -147,10 +141,6 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-seri
 .faq-body { font-size:14px; color:var(--ink-mid); line-height:1.7; padding-bottom:20px; display:none; }
 .faq-item.open .faq-body { display:block; }
 .faq-item.open .faq-chevron { transform:rotate(180deg); }
-
-/* FOOTER */
-.footer { background:var(--ink); padding:36px 40px; text-align:center; }
-.footer p { font-size:13px; color:rgba(255,255,255,.35); }
 </style>
 </head>
 <body>
@@ -158,7 +148,7 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-seri
 <!-- NAV -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="#" class="nav-logo">
+    <a href="https://rolegarden.com" class="nav-logo">
       <img src="https://rolegarden.com/rolegarden_logo_square_512.png" alt="Role Garden" class="nav-logo-img">
       <span class="nav-logo-name">Role Garden</span>
     </a>
@@ -168,8 +158,8 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-seri
       <a href="#prep" class="nav-link">Interview Preparation</a>
     </div>
     <div class="nav-right">
-      <a href="#" class="nav-signin">Sign In</a>
-      <a href="#" class="nav-cta">Get Started</a>
+      <a href="https://app.rolegarden.com" class="nav-signin">Sign In</a>
+      <a href="https://app.rolegarden.com" class="nav-cta">Get Started</a>
     </div>
   </div>
 </nav>
@@ -177,49 +167,42 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-seri
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <h1 class="hero-headline">Less applying.<br><em>More interviewing.</em></h1>
-    <p class="hero-sub">Find opportunities that fit your experience, tailor every application, and walk into every interview prepared.</p>
+    <h1 class="hero-headline">Your career,<br><em>in one workspace.</em></h1>
+    <p class="hero-sub">One place to find the right roles, build every application, and walk into every interview prepared.</p>
     <div class="hero-ctas">
-      <a href="#" class="btn-primary">
+      <a href="https://app.rolegarden.com" class="btn-primary">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L13 7L7 13M1 7H13" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Find My Opportunities
+        Start Free — No Card Required
       </a>
       <a href="#why" class="btn-secondary">See How It Works</a>
     </div>
 
-    <!-- JOURNEY VISUAL -->
+    <!-- JOURNEY VISUAL — 4 steps, no Application icon -->
     <div class="journey">
       <div class="journey-step">
         <div class="journey-icon">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 14V4M7 8l4-4 4 4" stroke="#1B6B3A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 16v1a2 2 0 002 2h12a2 2 0 002-2v-1" stroke="#1B6B3A" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <svg width="42" height="42" viewBox="0 0 22 22" fill="none"><path d="M11 14V4M7 8l4-4 4 4" stroke="#1B6B3A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 16v1a2 2 0 002 2h12a2 2 0 002-2v-1" stroke="#1B6B3A" stroke-width="1.6" stroke-linecap="round"/></svg>
         </div>
         <span class="journey-label">Upload Resume</span>
       </div>
       <div class="journey-arrow"></div>
       <div class="journey-step">
         <div class="journey-icon">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="#1B6B3A" stroke-width="1.5"/><path d="M8 11l2 2 4-4" stroke="#1B6B3A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg width="42" height="42" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="#1B6B3A" stroke-width="1.5"/><path d="M8 11l2 2 4-4" stroke="#1B6B3A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <span class="journey-label">Matched Roles</span>
       </div>
       <div class="journey-arrow"></div>
       <div class="journey-step">
         <div class="journey-icon">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="4" width="16" height="14" rx="2" stroke="#1B6B3A" stroke-width="1.5"/><path d="M7 9h8M7 12h5" stroke="#1B6B3A" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
-        <span class="journey-label">Application</span>
-      </div>
-      <div class="journey-arrow"></div>
-      <div class="journey-step">
-        <div class="journey-icon">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 3L4 6.5v5C4 15.5 7 19 11 20c4-1 7-4.5 7-8.5v-5L11 3z" stroke="#1B6B3A" stroke-width="1.5"/></svg>
+          <svg width="42" height="42" viewBox="0 0 22 22" fill="none"><path d="M11 3L4 6.5v5C4 15.5 7 19 11 20c4-1 7-4.5 7-8.5v-5L11 3z" stroke="#1B6B3A" stroke-width="1.5"/></svg>
         </div>
         <span class="journey-label">Interview Prep</span>
       </div>
       <div class="journey-arrow"></div>
       <div class="journey-step">
         <div class="journey-icon">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 2l2.5 7H21l-6 4.5 2.5 7L11 16l-6.5 4.5 2.5-7L1 9h7.5L11 2z" stroke="#1B6B3A" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <svg width="42" height="42" viewBox="0 0 22 22" fill="none"><path d="M11 2l2.5 7H21l-6 4.5 2.5 7L11 16l-6.5 4.5 2.5-7L1 9h7.5L11 2z" stroke="#1B6B3A" stroke-width="1.5" stroke-linejoin="round"/></svg>
         </div>
         <span class="journey-label">Offer</span>
       </div>
@@ -231,9 +214,8 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-seri
 <section class="section section-white" id="why">
   <div class="section-inner">
     <div class="section-eyebrow">Why Role Garden</div>
-    <h2 class="section-title">A smarter way to land<br>your next opportunity.</h2>
+    <h2 class="section-title">Your job search,<br>finally organized.</h2>
     <p class="section-sub">Most people spend hours searching, applying, and preparing without knowing if they are focusing on the right opportunities.</p>
-    <a href="#why" class="btn-primary" style="margin-bottom:32px;">See How It Works</a>
     <div class="compare-grid">
       <div class="compare-card">
         <div class="compare-card-title">Traditional Job Search</div>
@@ -261,9 +243,8 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-seri
         <div class="section-eyebrow">Curated Matching</div>
         <h2 class="section-title">Find opportunities that fit your career.</h2>
         <p class="section-sub">Role Garden matches your experience with opportunities from real employer career pages, helping you focus on roles where you are more likely to succeed.</p>
-        <a href="#" class="btn-primary">Find My Opportunities</a>
       </div>
-      <div class="assessed-card-preview" style="border:1px solid var(--green-border);border-radius:var(--r-lg);overflow:hidden;box-shadow:0 4px 20px rgba(27,107,58,0.12);">
+      <div class="assessed-card-preview">
         <div class="assessed-accent"></div>
         <div class="assessed-header-prev">
           <div class="ac-left">
@@ -292,7 +273,6 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-seri
             <div class="bullet-item"><div class="bullet-dot"></div>Competitive applicant pool</div>
           </div>
         </div>
-        <!-- FULL CARD — Summary + Actions -->
         <div style="padding:16px 22px;border-top:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;gap:16px;background:var(--cream);">
           <div>
             <div style="font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:5px;">Fit Summary</div>
@@ -304,7 +284,7 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-seri
           </div>
         </div>
         <div style="padding:14px 22px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;">
-          <button style="background:var(--green);color:white;border:none;border-radius:var(--r-sm);padding:10px 22px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:7px;">Pursue This <svg width="11" height="11" viewBox="0 0 13 13" fill="none"><path d="M2 6.5H11M7 2.5l4 4-4 4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <a href="https://app.rolegarden.com" style="background:var(--green);color:white;border:none;border-radius:var(--r-sm);padding:10px 22px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:7px;text-decoration:none;">Add to Workspace <svg width="11" height="11" viewBox="0 0 13 13" fill="none"><path d="M2 6.5H11M7 2.5l4 4-4 4" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           <a href="#" style="display:flex;align-items:center;gap:5px;font-size:12px;color:var(--ink-muted);font-weight:600;text-decoration:none;padding:7px 10px;border:1px solid var(--border);border-radius:var(--r-sm);"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M5 2H2a1 1 0 00-1 1v7a1 1 0 001 1h7a1 1 0 001-1V7M7.5 1.5h3v3M10.5 1.5L5.5 6.5" stroke="#7A887E" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>View posting</a>
         </div>
       </div>
@@ -312,7 +292,7 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-seri
   </div>
 </section>
 
-<!-- APPLICATION PACKAGE -->
+<!-- GET THROUGH THE NOISE -->
 <section class="section section-white">
   <div class="section-inner">
     <div class="two-col">
@@ -345,10 +325,9 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-seri
         </div>
       </div>
       <div>
-        <div class="section-eyebrow">Application Package</div>
+        <div class="section-eyebrow">Get Through the Noise</div>
         <h2 class="section-title">Stand out before you hit Apply.</h2>
         <p class="section-sub">Generate resumes and cover letters tailored to every opportunity. Not generic templates.</p>
-        <a href="#" class="btn-primary">See an Application Package</a>
       </div>
     </div>
   </div>
@@ -362,13 +341,12 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-seri
         <div class="section-eyebrow">Interview Preparation</div>
         <h2 class="section-title">Walk into every interview prepared.</h2>
         <p class="section-sub">Practice recruiter screens, hiring manager interviews, and final rounds with guidance built specifically for the opportunity you are pursuing.</p>
-        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px;">
+        <div style="display:flex;flex-direction:column;gap:10px;">
           <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--ink-mid);"><div style="width:6px;height:6px;background:var(--green);border-radius:50%;flex-shrink:0;"></div>Anticipate recruiter questions</div>
           <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--ink-mid);"><div style="width:6px;height:6px;background:var(--green);border-radius:50%;flex-shrink:0;"></div>Practice hiring manager conversations</div>
           <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--ink-mid);"><div style="width:6px;height:6px;background:var(--green);border-radius:50%;flex-shrink:0;"></div>Prepare for final round interviews</div>
           <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:var(--ink-mid);"><div style="width:6px;height:6px;background:var(--green);border-radius:50%;flex-shrink:0;"></div>Understand the company before the first call</div>
         </div>
-        <a href="#" class="btn-primary">See Interview Prep</a>
       </div>
       <div class="prep-preview">
         <div class="prep-section">
@@ -405,68 +383,22 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-seri
       <div class="ws-chip">Notes</div>
       <div class="ws-chip">AI Copilot</div>
     </div>
-    <a href="#" class="btn-primary">Explore the Workspace</a>
   </div>
 </section>
 
-<!-- IS THIS WORTH PURSUING -->
-<section class="section section-cream">
-  <div class="section-inner">
-    <div class="worth-card">
-      <div class="worth-left">
-        <div class="section-eyebrow" style="margin-bottom:12px;">Assess Any Opportunity</div>
-        <h2 style="font-size:36px;font-weight:800;color:var(--ink);letter-spacing:-0.025em;line-height:1.15;margin-bottom:12px;">Is this worth pursuing?</h2>
-        <p style="font-size:15px;color:var(--ink-mid);line-height:1.7;margin-bottom:28px;">Paste any job description and Role Garden will evaluate your fit, tailor your application, and help you prepare for interviews.</p>
-        <a href="#" class="btn-primary">Assess an Opportunity</a>
-      </div>
-      <div class="worth-preview">
-        <div class="assessed-card-preview" style="transform:scale(0.88);transform-origin:top right;">
-          <div class="assessed-accent"></div>
-          <div class="assessed-header-prev">
-            <div class="ac-left">
-              <div class="ac-logo" style="background:#000000;">O</div>
-              <div>
-                <div class="ac-badge"><svg width="9" height="9" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" stroke="#1B6B3A" stroke-width="1.1"/><path d="M3 5l1.5 1.5L7 3.5" stroke="#1B6B3A" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>Your Assessment</div>
-                <div class="ac-role">Account Executive, Enterprise</div>
-                <div class="ac-co">OpenAI · Remote (US)</div>
-              </div>
-            </div>
-            <div class="ac-match">
-              <span class="match-lbl">Strong Match</span>
-              <div class="bar-track"><div class="bar-fill" style="width:79%;"></div></div>
-            </div>
-          </div>
-          <div class="assessed-body-prev">
-            <div>
-              <div class="col-lbl col-green">Why You'll Love It</div>
-              <div class="bullet-item"><div class="bullet-chk"><svg width="7" height="7" viewBox="0 0 8 8" fill="none"><path d="M1 4l2 2 4-4" stroke="#1B6B3A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Enterprise SaaS motion maps directly</div>
-              <div class="bullet-item"><div class="bullet-chk"><svg width="7" height="7" viewBox="0 0 8 8" fill="none"><path d="M1 4l2 2 4-4" stroke="#1B6B3A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Technical buyer experience is a strong signal</div>
-            </div>
-            <div>
-              <div class="col-lbl col-amber">Potential Challenge</div>
-              <div class="bullet-item"><div class="bullet-dot"></div>AI product domain is a new vertical</div>
-            </div>
-          </div>
-        </div>
-        <div class="worth-fade"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- READY FOR YOUR NEXT OPPORTUNITY -->
+<!-- GET STARTED -->
 <section class="final-section">
   <div class="final-inner">
     <div class="section-eyebrow" style="justify-content:center;">Get Started</div>
     <h2 class="final-title">Ready for your next opportunity?</h2>
     <p class="final-sub">Discover. Decide. Prepare. Win.</p>
-    <a href="#" class="btn-primary" style="font-size:16px;padding:15px 32px;display:inline-flex;">Unlock My Career Workspace</a>
-    <p class="final-price">7-day free trial, then $39/month. Cancel anytime.</p>
+    <a href="https://app.rolegarden.com" class="btn-primary" style="font-size:16px;padding:15px 32px;display:inline-flex;">Start Free — No Card Required</a>
+    <p class="final-price">7-day free trial, up to 5 opportunities, then $39/month. Cancel anytime.</p>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="faq-section">
+<section class="faq-section" id="faq">
   <div class="faq-inner">
     <div class="section-eyebrow" style="margin-bottom:12px;">FAQ</div>
     <h2 style="font-size:36px;font-weight:800;color:var(--ink);letter-spacing:-0.03em;margin-bottom:40px;">Common questions.</h2>
@@ -497,8 +429,6 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-seri
 <!-- FOOTER -->
 <footer style="background:var(--ink);padding:56px 40px 32px;">
   <div style="max-width:1200px;margin:0 auto;">
-
-    <!-- TOP ROW -->
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;">
 
       <!-- BRAND -->
@@ -509,16 +439,13 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-seri
         </div>
         <p style="font-size:13px;color:rgba(255,255,255,.45);line-height:1.65;margin-bottom:20px;">Cultivate your career.</p>
         <div style="display:flex;align-items:center;gap:12px;">
-          <!-- LinkedIn -->
-          <a href="#" style="width:34px;height:34px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:8px;display:flex;align-items:center;justify-content:center;text-decoration:none;transition:background .15s;" onmouseover="this.style.background='rgba(255,255,255,.16)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+          <a href="#" style="width:34px;height:34px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:8px;display:flex;align-items:center;justify-content:center;text-decoration:none;" onmouseover="this.style.background='rgba(255,255,255,.16)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="rgba(255,255,255,.7)"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
           </a>
-          <!-- Instagram -->
-          <a href="#" style="width:34px;height:34px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:8px;display:flex;align-items:center;justify-content:center;text-decoration:none;transition:background .15s;" onmouseover="this.style.background='rgba(255,255,255,.16)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+          <a href="#" style="width:34px;height:34px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:8px;display:flex;align-items:center;justify-content:center;text-decoration:none;" onmouseover="this.style.background='rgba(255,255,255,.16)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="rgba(255,255,255,.7)" stroke="none"/></svg>
           </a>
-          <!-- Facebook -->
-          <a href="#" style="width:34px;height:34px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:8px;display:flex;align-items:center;justify-content:center;text-decoration:none;transition:background .15s;" onmouseover="this.style.background='rgba(255,255,255,.16)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+          <a href="#" style="width:34px;height:34px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:8px;display:flex;align-items:center;justify-content:center;text-decoration:none;" onmouseover="this.style.background='rgba(255,255,255,.16)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="rgba(255,255,255,.7)"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
           </a>
         </div>
@@ -528,11 +455,10 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-seri
       <div>
         <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px;">Product</div>
         <div style="display:flex;flex-direction:column;gap:10px;">
-          <a href="#why" style="font-size:14px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.6)'">How It Works</a>
-          <a href="#matching" style="font-size:14px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Curated Matching</a>
-          <a href="#prep" style="font-size:14px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Interview Preparation</a>
-          <a href="#" style="font-size:14px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Application Workspace</a>
-          <a href="#faq" style="font-size:14px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.6)'">FAQ</a>
+          <a href="#why" style="font-size:14px;color:rgba(255,255,255,.8);text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.6)'">How It Works</a>
+          <a href="#matching" style="font-size:14px;color:rgba(255,255,255,.8);text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Curated Matching</a>
+          <a href="#prep" style="font-size:14px;color:rgba(255,255,255,.8);text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Interview Preparation</a>
+          <a href="#faq" style="font-size:14px;color:rgba(255,255,255,.8);text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.6)'">FAQ</a>
         </div>
       </div>
 
@@ -540,36 +466,33 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-seri
       <div>
         <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px;">Company</div>
         <div style="display:flex;flex-direction:column;gap:10px;">
-          <a href="#" style="font-size:14px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.6)'">About</a>
-          <a href="mailto:hello@rolegarden.com" style="font-size:14px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Contact Us</a>
-          <a href="https://rolegarden.com/privacy" target="_blank" rel="noopener" style="font-size:14px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Privacy Policy</a>
-          <a href="https://rolegarden.com/terms" target="_blank" rel="noopener" style="font-size:14px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Terms of Service</a>
+          <a href="mailto:hello@rolegarden.com" style="font-size:14px;color:rgba(255,255,255,.8);text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Contact Us</a>
+          <a href="https://rolegarden.com/privacy" target="_blank" rel="noopener" style="font-size:14px;color:rgba(255,255,255,.8);text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Privacy Policy</a>
+          <a href="https://rolegarden.com/terms" target="_blank" rel="noopener" style="font-size:14px;color:rgba(255,255,255,.8);text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Terms of Service</a>
         </div>
       </div>
 
       <!-- GET STARTED -->
       <div>
         <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px;">Get Started</div>
-        <p style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.65;margin-bottom:16px;">Find opportunities that fit your experience and prepare to win.</p>
-        <a href="#" style="display:inline-flex;align-items:center;gap:7px;background:var(--green);color:white;text-decoration:none;padding:11px 20px;border-radius:var(--r-sm);font-size:13px;font-weight:700;transition:background .15s;" onmouseover="this.style.background='var(--green-mid)'" onmouseout="this.style.background='var(--green)'">
+        <p style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.65;margin-bottom:16px;">Your career workspace. Find roles, build applications, and prep for every interview.</p>
+        <a href="https://app.rolegarden.com" style="display:inline-flex;align-items:center;gap:7px;background:var(--green);color:white;text-decoration:none;padding:11px 20px;border-radius:var(--r-sm);font-size:13px;font-weight:700;" onmouseover="this.style.background='var(--green-mid)'" onmouseout="this.style.background='var(--green)'">
           <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M7 1L13 7L7 13M1 7H13" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Unlock My Career Workspace
+          Start Free
         </a>
-        <p style="font-size:11px;color:rgba(255,255,255,.3);margin-top:10px;">7-day free trial, then $39/month.</p>
+        <p style="font-size:11px;color:rgba(255,255,255,.3);margin-top:10px;">7-day free trial, up to 5 opportunities, then $39/month.</p>
       </div>
 
     </div>
 
-    <!-- BOTTOM ROW -->
     <div style="border-top:1px solid rgba(255,255,255,.08);padding-top:24px;display:flex;align-items:center;justify-content:space-between;">
-      <p style="font-size:13px;color:rgba(255,255,255,.25);">© 2026 Role Garden, LLC. All rights reserved.</p>
+      <p style="font-size:13px;color:rgba(255,255,255,.55);">© 2026 Role Garden, LLC. All rights reserved.</p>
       <div style="display:flex;gap:20px;">
-        <a href="https://rolegarden.com/privacy" target="_blank" rel="noopener" style="font-size:12px;color:rgba(255,255,255,.25);text-decoration:none;">Privacy</a>
-        <a href="https://rolegarden.com/terms" target="_blank" rel="noopener" style="font-size:12px;color:rgba(255,255,255,.25);text-decoration:none;">Terms</a>
-        <a href="mailto:hello@rolegarden.com" style="font-size:12px;color:rgba(255,255,255,.25);text-decoration:none;">hello@rolegarden.com</a>
+        <a href="https://rolegarden.com/privacy" target="_blank" rel="noopener" style="font-size:12px;color:rgba(255,255,255,.55);text-decoration:none;">Privacy</a>
+        <a href="https://rolegarden.com/terms" target="_blank" rel="noopener" style="font-size:12px;color:rgba(255,255,255,.55);text-decoration:none;">Terms</a>
+        <a href="mailto:hello@rolegarden.com" style="font-size:12px;color:rgba(255,255,255,.55);text-decoration:none;">hello@rolegarden.com</a>
       </div>
     </div>
-
   </div>
 </footer>
 
