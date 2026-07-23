@@ -458,11 +458,30 @@ body { font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-seri
   </div>
 </footer>
 
+<!-- COOKIE CONSENT BANNER -->
+<div id="rgCookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1A2E22;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 -2px 12px rgba(0,0,0,.15);">
+  <p style="font-size:13px;color:rgba(255,255,255,.75);line-height:1.6;margin:0;max-width:700px;">Role Garden uses cookies to power your experience. By continuing, you agree to our <a href="https://rolegarden.com/privacy" target="_blank" style="color:rgba(255,255,255,.9);text-decoration:underline;">Privacy Policy</a> and <a href="https://rolegarden.com/terms" target="_blank" style="color:rgba(255,255,255,.9);text-decoration:underline;">Terms of Service</a>.</p>
+  <button onclick="rgDismissCookies()" style="flex-shrink:0;background:#1B6B3A;color:white;border:none;border-radius:8px;padding:9px 22px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap;">OK</button>
+</div>
+
 <script>
 function toggleFaq(btn) {
   const item = btn.parentElement;
   item.classList.toggle('open');
 }
+function rgDismissCookies(){
+  localStorage.setItem('rg_cookies_ok','1');
+  document.getElementById('rgCookieBanner').style.display='none';
+}
+(function(){
+  if(!localStorage.getItem('rg_cookies_ok')){
+    document.getElementById('rgCookieBanner').style.display='flex';
+  }
+  // Auto-dismiss when user clicks any CTA
+  document.querySelectorAll('a[href="https://app.rolegarden.com"]').forEach(function(el){
+    el.addEventListener('click', rgDismissCookies);
+  });
+})();
 </script>
 
 </body>
