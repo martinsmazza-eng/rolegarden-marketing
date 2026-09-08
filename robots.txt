@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: /
+Allow: /
 
-User-agent: *
-Noindex: /
+Sitemap: https://rolegarden.com/sitemap.xml
